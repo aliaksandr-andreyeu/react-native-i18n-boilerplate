@@ -1,0 +1,38 @@
+buildscript {
+    ext {
+        buildToolsVersion = "35.0.0"
+        minSdkVersion = 24
+        compileSdkVersion = 35
+        targetSdkVersion = 35
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "2.1.20"
+        googlePlayServicesAuthVersion = "20.7.0"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+
+        classpath("com.google.gms:google-services:4.4.3")
+
+        classpath("org.codehaus.groovy:groovy-json:3.0.25")
+
+        classpath("com.google.api-client:google-api-client:1.35.2")
+
+        classpath("com.google.firebase:firebase-crashlytics-gradle:3.0.6")
+        classpath("com.google.firebase:firebase-appdistribution-gradle:4.0.1")
+        classpath("com.google.firebase:perf-plugin:1.4.2")
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://maven.sumsub.com/repository/maven-public/" }
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"

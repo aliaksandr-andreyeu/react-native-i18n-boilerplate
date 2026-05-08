@@ -1,0 +1,15 @@
+apiKey:
+
+downloadFormat: single-language-json
+downloadPath: ./src/localization/{lang}/index.json
+downloadOptions:
+  - ONLY_TRANSLATED
+  - WRITE_NESTED
+
+uploadFormat: single-language-json
+uploadPath: ./src/localization/{lang}/index.json
+uploadOptions:
+  - PUBLISH_AFTER_IMPORT
+  - UPDATE_ORDER
+#  - REPLACE_TRANSLATION_IF_FOUND
+#  - TRIM_LEADING_TRAILING_SPACES

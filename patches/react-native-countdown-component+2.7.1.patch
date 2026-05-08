@@ -1,0 +1,134 @@
+diff --git a/node_modules/react-native-countdown-component/index.js b/node_modules/react-native-countdown-component/index.js
+index b546b82..226c8a3 100644
+--- a/node_modules/react-native-countdown-component/index.js
++++ b/node_modules/react-native-countdown-component/index.js
+@@ -9,12 +9,12 @@ import {
+   AppState
+ } from 'react-native';
+ import _ from 'lodash';
+-import {sprintf} from 'sprintf-js';
++import { sprintf } from 'sprintf-js';
+ 
+-const DEFAULT_DIGIT_STYLE = {backgroundColor: '#FAB913'};
+-const DEFAULT_DIGIT_TXT_STYLE = {color: '#000'};
+-const DEFAULT_TIME_LABEL_STYLE = {color: '#000'};
+-const DEFAULT_SEPARATOR_STYLE = {color: '#000'};
++const DEFAULT_DIGIT_STYLE = { backgroundColor: '#FAB913' };
++const DEFAULT_DIGIT_TXT_STYLE = { color: '#000' };
++const DEFAULT_TIME_LABEL_STYLE = { color: '#000' };
++const DEFAULT_SEPARATOR_STYLE = { color: '#000' };
+ const DEFAULT_TIME_TO_SHOW = ['D', 'H', 'M', 'S'];
+ const DEFAULT_TIME_LABELS = {
+   d: 'Days',
+@@ -51,12 +51,12 @@ class CountDown extends React.Component {
+   }
+ 
+   componentDidMount() {
+-    AppState.addEventListener('change', this._handleAppStateChange);
++    this.subscription = AppState.addEventListener('change', this._handleAppStateChange);
+   }
+ 
+   componentWillUnmount() {
+     clearInterval(this.timer);
+-    AppState.removeEventListener('change', this._handleAppStateChange);
++    this.subscription?.remove?.()
+   }
+ 
+   componentDidUpdate(prevProps, prevState) {
+@@ -77,7 +77,7 @@ class CountDown extends React.Component {
+   // }
+ 
+   _handleAppStateChange = currentAppState => {
+-    const {until, wentBackgroundAt} = this.state;
++    const { until, wentBackgroundAt } = this.state;
+     if (currentAppState === 'active' && wentBackgroundAt && this.props.running) {
+       const diff = (Date.now() - wentBackgroundAt) / 1000.0;
+       this.setState({
+@@ -86,12 +86,12 @@ class CountDown extends React.Component {
+       });
+     }
+     if (currentAppState === 'background') {
+-      this.setState({wentBackgroundAt: Date.now()});
++      this.setState({ wentBackgroundAt: Date.now() });
+     }
+   }
+ 
+   getTimeLeft = () => {
+-    const {until} = this.state;
++    const { until } = this.state;
+     return {
+       seconds: until % 60,
+       minutes: parseInt(until / 60, 10) % 60,
+@@ -118,7 +118,7 @@ class CountDown extends React.Component {
+     }
+ 
+     if (this.state.until === 0) {
+-      this.setState({lastUntil: 0, until: 0});
++      this.setState({ lastUntil: 0, until: 0 });
+     } else {
+       if (this.props.onChange) {
+         this.props.onChange(this.state.until);
+@@ -131,16 +131,16 @@ class CountDown extends React.Component {
+   };
+ 
+   renderDigit = (d) => {
+-    const {digitStyle, digitTxtStyle, size} = this.props;
++    const { digitStyle, digitTxtStyle, size } = this.props;
+     return (
+       <View style={[
+         styles.digitCont,
+-        {width: size * 2.3, height: size * 2.6},
++        { width: size * 2.3, height: size * 2.6 },
+         digitStyle,
+       ]}>
+         <Text style={[
+           styles.digitTxt,
+-          {fontSize: size},
++          { fontSize: size },
+           digitTxtStyle,
+         ]}>
+           {d}
+@@ -150,12 +150,12 @@ class CountDown extends React.Component {
+   };
+ 
+   renderLabel = label => {
+-    const {timeLabelStyle, size} = this.props;
++    const { timeLabelStyle, size } = this.props;
+     if (label) {
+       return (
+         <Text style={[
+           styles.timeTxt,
+-          {fontSize: size / 1.8},
++          { fontSize: size / 1.8 },
+           timeLabelStyle,
+         ]}>
+           {label}
+@@ -176,12 +176,12 @@ class CountDown extends React.Component {
+   };
+ 
+   renderSeparator = () => {
+-    const {separatorStyle, size} = this.props;
++    const { separatorStyle, size } = this.props;
+     return (
+-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
++      <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+         <Text style={[
+           styles.separatorTxt,
+-          {fontSize: size * 1.2},
++          { fontSize: size * 1.2 },
+           separatorStyle,
+         ]}>
+           {':'}
+@@ -191,9 +191,9 @@ class CountDown extends React.Component {
+   };
+ 
+   renderCountDown = () => {
+-    const {timeToShow, timeLabels, showSeparator} = this.props;
+-    const {until} = this.state;
+-    const {days, hours, minutes, seconds} = this.getTimeLeft();
++    const { timeToShow, timeLabels, showSeparator } = this.props;
++    const { until } = this.state;
++    const { days, hours, minutes, seconds } = this.getTimeLeft();
+     const newTime = sprintf('%02d:%02d:%02d:%02d', days, hours, minutes, seconds).split(':');
+     const Component = this.props.onPress ? TouchableOpacity : View;
+ 

@@ -1,0 +1,149 @@
+diff --git a/node_modules/@axiomhq/logging/dist/cjs/default-formatters.cjs b/node_modules/@axiomhq/logging/dist/cjs/default-formatters.cjs
+index 1695c4e..b18f4aa 100644
+--- a/node_modules/@axiomhq/logging/dist/cjs/default-formatters.cjs
++++ b/node_modules/@axiomhq/logging/dist/cjs/default-formatters.cjs
+@@ -11,7 +11,7 @@ const injectPlatform = (logEvent) => {
+       deploymentId: process.env.VERCEL_DEPLOYMENT_ID,
+       deploymentUrl: process.env.NEXT_PUBLIC_VERCEL_URL,
+       project: process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
+-      source: logEvent.source
++      source: 'mobile-log'
+     };
+     vercelLogEvent.git = {
+       commit: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA,
+@@ -30,7 +30,7 @@ const injectPlatform = (logEvent) => {
+       context: process.env.CONTEXT,
+       deploymentUrl: process.env.DEPLOYMENT_URL,
+       deploymentId: runtime.isEdgeRuntime ? process.env.DENO_DEPLOYMENT_ID : process.env.NETLIFY_DEPLOYMENT_ID,
+-      source: logEvent.source
++      source: 'mobile-log'
+     };
+     return netlifyLogEvent;
+   }
+@@ -38,7 +38,7 @@ const injectPlatform = (logEvent) => {
+   genericLogEvent.platform = {
+     environment: platform.environment,
+     region: platform.region,
+-    source: logEvent.source
++    source: 'mobile-log'
+   };
+   return genericLogEvent;
+ };
+diff --git a/node_modules/@axiomhq/logging/dist/cjs/logger.cjs b/node_modules/@axiomhq/logging/dist/cjs/logger.cjs
+index 4d106b9..06b241b 100644
+--- a/node_modules/@axiomhq/logging/dist/cjs/logger.cjs
++++ b/node_modules/@axiomhq/logging/dist/cjs/logger.cjs
+@@ -114,7 +114,7 @@ class Logger {
+         "@app": {
+           "axiom-logging-version": runtime.Version
+         },
+-        source: runtime.isBrowser ? "browser-log" : "server-log"
++        source: 'mobile-log'
+       };
+       if (rootFields && typeof rootFields === "object") {
+         Object.assign(logEvent, rootFields);
+diff --git a/node_modules/@axiomhq/logging/dist/esm/default-formatters.js b/node_modules/@axiomhq/logging/dist/esm/default-formatters.js
+index 5d720ef..9ba9af3 100644
+--- a/node_modules/@axiomhq/logging/dist/esm/default-formatters.js
++++ b/node_modules/@axiomhq/logging/dist/esm/default-formatters.js
+@@ -9,7 +9,7 @@ const injectPlatform = (logEvent) => {
+       deploymentId: process.env.VERCEL_DEPLOYMENT_ID,
+       deploymentUrl: process.env.NEXT_PUBLIC_VERCEL_URL,
+       project: process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
+-      source: logEvent.source
++      source: 'mobile-log'
+     };
+     vercelLogEvent.git = {
+       commit: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA,
+@@ -28,7 +28,7 @@ const injectPlatform = (logEvent) => {
+       context: process.env.CONTEXT,
+       deploymentUrl: process.env.DEPLOYMENT_URL,
+       deploymentId: isEdgeRuntime ? process.env.DENO_DEPLOYMENT_ID : process.env.NETLIFY_DEPLOYMENT_ID,
+-      source: logEvent.source
++      source: 'mobile-log'
+     };
+     return netlifyLogEvent;
+   }
+@@ -36,7 +36,7 @@ const injectPlatform = (logEvent) => {
+   genericLogEvent.platform = {
+     environment,
+     region,
+-    source: logEvent.source
++    source: 'mobile-log'
+   };
+   return genericLogEvent;
+ };
+diff --git a/node_modules/@axiomhq/logging/dist/esm/logger.js b/node_modules/@axiomhq/logging/dist/esm/logger.js
+index 75c5051..e37dd9e 100644
+--- a/node_modules/@axiomhq/logging/dist/esm/logger.js
++++ b/node_modules/@axiomhq/logging/dist/esm/logger.js
+@@ -5,7 +5,7 @@ var __publicField = (obj, key, value) => {
+   return value;
+ };
+ import { defaultFormatters } from "./default-formatters.js";
+-import { Version, isBrowser } from "./runtime.js";
++import { Version } from "./runtime.js";
+ const LOG_LEVEL = "info";
+ const EVENT = Symbol.for("logging.event");
+ const LogLevelValue = {
+@@ -112,7 +112,7 @@ class Logger {
+         "@app": {
+           "axiom-logging-version": Version
+         },
+-        source: isBrowser ? "browser-log" : "server-log"
++        source: 'mobile-log'
+       };
+       if (rootFields && typeof rootFields === "object") {
+         Object.assign(logEvent, rootFields);
+diff --git a/node_modules/@axiomhq/logging/src/default-formatters.ts b/node_modules/@axiomhq/logging/src/default-formatters.ts
+index bd7c9b5..c785bc5 100644
+--- a/node_modules/@axiomhq/logging/src/default-formatters.ts
++++ b/node_modules/@axiomhq/logging/src/default-formatters.ts
+@@ -49,7 +49,7 @@ export const injectPlatform: Formatter = (logEvent): PlatformLogEvent => {
+       deploymentId: process.env.VERCEL_DEPLOYMENT_ID,
+       deploymentUrl: process.env.NEXT_PUBLIC_VERCEL_URL,
+       project: process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
+-      source: logEvent.source,
++      source: 'mobile-log',
+     };
+ 
+     vercelLogEvent.git = {
+@@ -71,7 +71,7 @@ export const injectPlatform: Formatter = (logEvent): PlatformLogEvent => {
+       context: process.env.CONTEXT,
+       deploymentUrl: process.env.DEPLOYMENT_URL,
+       deploymentId: isEdgeRuntime ? process.env.DENO_DEPLOYMENT_ID : process.env.NETLIFY_DEPLOYMENT_ID,
+-      source: logEvent.source,
++      source: 'mobile-log',
+     };
+ 
+     return netlifyLogEvent;
+@@ -81,7 +81,7 @@ export const injectPlatform: Formatter = (logEvent): PlatformLogEvent => {
+   genericLogEvent.platform = {
+     environment: environment,
+     region: region,
+-    source: logEvent.source,
++    source: 'mobile-log',
+   };
+ 
+   return genericLogEvent;
+diff --git a/node_modules/@axiomhq/logging/src/logger.ts b/node_modules/@axiomhq/logging/src/logger.ts
+index 4c5d3c8..b32f142 100644
+--- a/node_modules/@axiomhq/logging/src/logger.ts
++++ b/node_modules/@axiomhq/logging/src/logger.ts
+@@ -1,6 +1,6 @@
+ import { defaultFormatters } from 'src/default-formatters';
+ import { Transport } from '.';
+-import { Version, isBrowser } from './runtime';
++import { Version } from './runtime';
+ 
+ const LOG_LEVEL = 'info';
+ 
+@@ -185,7 +185,7 @@ export class Logger {
+       '@app': {
+         'axiom-logging-version': Version ?? 'unknown',
+       },
+-      source: isBrowser ? 'browser-log' : 'server-log',
++      source: 'mobile-log',
+     };
+ 
+     // Apply root properties from logger config if present

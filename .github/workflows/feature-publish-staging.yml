@@ -1,0 +1,158 @@
+name: Publish Staging Build
+run-name: ${{ github.actor }} is publishing a new staging build 🚀
+on:
+#   push:
+#     branches:
+#       - release/*
+  workflow_dispatch:
+
+env:
+  APP_DISTRIBUTION_CAPITAL_CREDENTIALS: ${{ secrets.APP_DISTRIBUTION_CAPITAL_CREDENTIALS }}
+  # Define the ENVIRONMENT variable based on branch dynamically, if needed
+  ENVIRONMENT: ${{ github.ref }}
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish-feature:
+    runs-on: ubuntu-latest
+    container:
+      image: alvrme/alpine-android:android-33-jdk17
+
+    steps:
+      - name: Accept Android terms
+        run: yes | sdkmanager --licenses --sdk_root=$ANDROID_HOME
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Determine latest version branch
+        id: determine_version
+        run: |
+          echo "Determining the latest version branch..."
+          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+            LATEST_BRANCH=$(git branch -r | grep 'origin/testing' | sort -V | tail -n 1)
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+            LATEST_BRANCH=$(git branch -r | grep 'origin/development' | sort -V | tail -n 1)
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+            LATEST_BRANCH=$(git branch -r | grep 'origin/release/' | sort -V | tail -n 1)
+          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+            LATEST_BRANCH="origin/main"
+          fi
+          echo "LATEST_BRANCH=${LATEST_BRANCH}" >> $GITHUB_ENV
+          echo "Latest branch set to ${LATEST_BRANCH}"
+
+      - name: Checkout the latest version branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.determine_version.outputs.latest_branch }}
+          fetch-depth: 0
+
+#      - name: Set up environment file
+#        run: |
+#          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+#            echo "${{ secrets.ENV_TESTING }}" > .env.qa
+#            echo "${{ secrets.ENV_TESTING }}" > .env
+#            export ENVFILE=.env.qa
+#            cat .env.qa
+#            echo $ENVFILE
+#          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+#            echo "${{ secrets.ENV_DEVELOPMENT}}" > .env.development
+#            echo "${{ secrets.ENV_DEVELOPMENT }}" > .env
+#            export ENVFILE=.env.development
+#            cat .env.development
+#            echo $ENVFILE
+#          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+#            echo "${{ secrets.ENV_RELEASE }}" > .env.staging
+#            echo "${{ secrets.ENV_RELEASE }}" > .env
+#            export ENVFILE=.env.staging
+#            cat .env.staging
+#            echo $ENVFILE
+#          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+#            echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
+#            echo "${{ secrets.ENV_PRODUCTION }}" > .env
+#            export ENVFILE=.env.production
+#            cat .env.production
+#            echo $ENVFILE
+#          fi
+
+      - name: Set up environment file
+        run: |
+          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+            export ENVFILE=.env.qa
+            cat .env.qa
+            echo $ENVFILE
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+            export ENVFILE=.env.development
+            cat .env.development
+            echo $ENVFILE
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+            export ENVFILE=.env.staging
+            cat .env.staging
+            echo $ENVFILE
+          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+            export ENVFILE=.env.production
+            cat .env.production
+            echo $ENVFILE
+          fi
+
+      - name: Install Node.js and npm
+        run: |
+          apk update
+          apk add nodejs npm
+          
+      - name: Prepare build
+        run: cd android && chmod +x ./gradlew
+
+      - name: Prepare version suffix
+        uses: benjlevesque/short-sha@v3.0  # Hypothetical version supporting Node.js 20
+        id: short-sha
+        with:
+          length: 6
+
+#      - name: Run unit tests
+#        run: cd android && ./gradlew signingReport testDebugUnitTest
+
+      - name: Build apk
+        run:  |
+          npm install && cd android
+          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+            export SENTRY_DISABLE_AUTO_UPLOAD=true && export ENVFILE=.env.qa && ./gradlew assembleQaRelease -DversionCodeExt=${{ github.run_number }} -DversionNameExt="${{ github.ref_name }} (${{ steps.short-sha.outputs.sha }})"
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+            export SENTRY_DISABLE_AUTO_UPLOAD=true && export ENVFILE=.env.development && ./gradlew assembleDevRelease -DversionCodeExt=${{ github.run_number }} -DversionNameExt="${{ github.ref_name }} (${{ steps.short-sha.outputs.sha }})"
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+            export SENTRY_DISABLE_AUTO_UPLOAD=true && export ENVFILE=.env.staging && ./gradlew assembleStageRelease -DversionCodeExt=${{ github.run_number }} -DversionNameExt="${{ github.ref_name }} (${{ steps.short-sha.outputs.sha }})"
+          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+            export SENTRY_DISABLE_AUTO_UPLOAD=true && export ENVFILE=.env.production && ./gradlew assembleProdRelease -DversionCodeExt=${{ github.run_number }} -DversionNameExt="${{ github.ref_name }} (${{ steps.short-sha.outputs.sha }})"
+          fi
+
+      - name: Prepare publishing
+        run: cd android && echo '${{ secrets.APP_DISTRIBUTION_CAPITAL_CREDENTIALS }}' >> appDistributionCredentials.json
+
+      - name: Publish Stage apk on Firebase Distribution
+        run: |
+          RELEASE_NOTES="${{ github.event.head_commit.message }}"
+          if [ -z "$RELEASE_NOTES" ]; then
+            RELEASE_NOTES="Default release notes for manual build"
+          fi
+          export ENVFILE=.env.staging
+          cd android
+          ./gradlew appDistributionUploadStageRelease --releaseNotes "$RELEASE_NOTES" --appId "1:922508707079:android:89224530877b2e53e2b1a2"
+        shell: bash
+        
+#      - name: List possible APK dirs
+#        run: |
+#          ls -la
+#          ls -la app/build/outputs/apk/stage/release/
+#          ls -la ./app/build/outputs/apk/stage/release/
+#          ls -la .android/app/build/outputs/apk/stage/release/
+#          ls -la ./android/app/build/outputs/apk/stage/release/
+          
+#      - name: Publish apk on Github
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: app-stage-release
+#          path: app/build/outputs/apk/stage/release/*.apk
+#          retention-days: 3

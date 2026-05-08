@@ -1,0 +1,202 @@
+{
+    "color": {
+        "background": {
+            "base": {
+                "primary": "#1b1f24",
+                "secondary": "#1b1f24cc"
+            },
+            "card": {
+                "primary": "#2e343c",
+                "secondary": "#f7f8fa",
+                "accent": "#6834df"
+            },
+            "interaction": {
+                "basic": {
+                    "primary": {
+                        "default": "#f7f8fa",
+                        "pressed": "#d9dde5",
+                        "loading": "#d9dde5",
+                        "disabled": "#2e343c"
+                    },
+                    "secondary": {
+                        "default": "#6834df",
+                        "pressed": "#4a2f88",
+                        "loading": "#4a2f88",
+                        "disabled": "#3b2c5e"
+                    },
+                    "tertiary": {
+                        "default": "#2e343c",
+                        "pressed": "#2e343c",
+                        "loading": "#2e343c",
+                        "disabled": "#2e343c"
+                    },
+                    "accent": {
+                        "default": "#24bd67",
+                        "pressed": "#247a45",
+                        "loading": "#247a45",
+                        "disabled": "#205a35"
+                    }
+                },
+                "negative": {
+                    "default": "#e63d64",
+                    "pressed": "#b42647",
+                    "loading": "#b42647",
+                    "disabled": "#8c2a41"
+                },
+                "positive": {
+                    "default": "#24bd67",
+                    "pressed": "#247a45",
+                    "loading": "#247a45",
+                    "disabled": "#205a35"
+                },
+                "context": {
+                    "rewards": {
+                        "strong": "#1f55e0",
+                        "subtle": "#ffffff"
+                    },
+                    "cashback": {
+                        "strong": "#f7bf16",
+                        "subtle": "#d0a11b"
+                    }
+                }
+            },
+            "tag": {
+                "base": {
+                    "positive": "#69e794",
+                    "negative": "#f8b9c7",
+                    "action-required": "#ffebb0",
+                    "in-progress": "#a3bdff",
+                    "signal": "#bc9fff"
+                },
+                "simple": {
+                    "primary": "#d9dde5",
+                    "secondary": "#2e343c",
+                    "tertiary": "#434a54"
+                }
+            },
+            "asset": {
+                "strong": "#ffffff",
+                "medium": "#ffffff",
+                "subtle": "#ffffff"
+            }
+        },
+        "text": {
+            "title": {
+                "primary": "#ffffff",
+                "secondary": "#bdc3cf",
+                "tertiary": "#a2a9b9",
+                "hint": "#8890a1",
+                "inverted": "#1b1f24"
+            },
+            "base": {
+                "primary": "#ffffff",
+                "secondary": "#bdc3cf",
+                "tertiary": "#a2a9b9",
+                "hint": "#8890a1",
+                "mask": "#6e7783",
+                "inverted": "#1b1f24",
+                "disabled": "#2e343c"
+            },
+            "interaction": {
+                "basic": {
+                    "primary": {
+                        "default": "#1b1f24",
+                        "pressed": "#1b1f24",
+                        "disabled": "#8890a1"
+                    },
+                    "secondary": {
+                        "default": "#ffffff",
+                        "pressed": "#ffffff",
+                        "disabled": "#a2a9b9"
+                    },
+                    "tertiary": {
+                        "default": "#ffffff",
+                        "pressed": "#ffffff",
+                        "disabled": "#58616c"
+                    },
+                    "accent": {
+                        "default": "#976ff2",
+                        "pressed": "#8050f1",
+                        "disabled": "#542cb2"
+                    }
+                },
+                "positive": {
+                    "default": "#ffffff",
+                    "pressed": "#ffffff",
+                    "disabled": "#f7f8fa"
+                },
+                "negative": {
+                    "default": "#ffffff",
+                    "pressed": "#ffffff",
+                    "disabled": "#f7f8fa"
+                }
+            },
+            "tag": {
+                "positive": "#1a3d25",
+                "negative": "#682938",
+                "action-required": "#644e18",
+                "in-progress": "#264fb4"
+            },
+            "status": {
+                "positive": "#24bd67",
+                "negative": "#e63d64"
+            }
+        },
+        "border": {
+            "base": {
+                "divider": "#2e343c",
+                "positive": {
+                    "medium": "#ffffff",
+                    "strong": "#ffffff"
+                },
+                "negative": "#e63d64",
+                "action-required": {
+                    "medium": "#ffd15e",
+                    "strong": "#aa841c"
+                },
+                "in-progress": "#ffffff",
+                "progress-bar": "#ffffff",
+                "flag": "#ffffff"
+            },
+            "interaction": {
+                "tag-hyperlink": "#ffffff",
+                "checkbox": "#8890a1",
+                "input": "#976ff2"
+            }
+        },
+        "icon": {
+            "base": {
+                "primary": "#ffffff",
+                "secondary": "#a2a9b9",
+                "strong": "#bc9fff",
+                "subtle": "#6834df",
+                "contrast": "#ffffff",
+                "inverted": "#1b1f24",
+                "tertiary": "#6e7783"
+            },
+            "context": {
+                "rewards": "#5685ff",
+                "cashback": "#f7bf16",
+                "amega": "#24bd67"
+            }
+        },
+        "overlay": {
+            "dark": "#ffffff",
+            "light": {
+                "strong": "#ffffff",
+                "subtle": "#ffffff"
+            }
+        }
+    },
+    "spacing": {
+        "base": {
+            "1": 4,
+            "2": 8,
+            "3": 12,
+            "4": 16,
+            "5": 20,
+            "6": 24,
+            "7": 32
+        }
+    }
+}

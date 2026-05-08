@@ -1,0 +1,538 @@
+{
+  "Color": {
+    "Background": {
+      "Base": {
+        "Primary": {
+          "value": "{Color.Graphite.050}",
+          "type": "color"
+        },
+        "Secondary": {
+          "value": "{Color.Opasity.Graphite.050.80}",
+          "type": "color"
+        }
+      },
+      "Card": {
+        "Primary": {
+          "value": "{Color.Base.White}",
+          "type": "color"
+        },
+        "Secondary": {
+          "value": "{Color.Graphite.900}",
+          "type": "color"
+        },
+        "Accent": {
+          "value": "{Color.Purple.600}",
+          "type": "color"
+        }
+      },
+      "Interaction": {
+        "Basic": {
+          "Primary": {
+            "Default": {
+              "value": "{Color.Graphite.900}",
+              "type": "color"
+            },
+            "Pressed": {
+              "value": "{Color.Graphite.700}",
+              "type": "color"
+            },
+            "Loading": {
+              "value": "{Color.Graphite.700}",
+              "type": "color"
+            },
+            "Disabled": {
+              "value": "{Color.Graphite.100}",
+              "type": "color"
+            }
+          },
+          "Secondary": {
+            "Default": {
+              "value": "{Color.Purple.100}",
+              "type": "color"
+            },
+            "Pressed": {
+              "value": "{Color.Purple.200}",
+              "type": "color"
+            },
+            "Loading": {
+              "value": "{Color.Purple.200}",
+              "type": "color"
+            },
+            "Disabled": {
+              "value": "{Color.Purple.050}",
+              "type": "color"
+            }
+          },
+          "Tertiary": {
+            "Default": {
+              "value": "{Color.Base.White}",
+              "type": "color"
+            },
+            "Pressed": {
+              "value": "{Color.Base.White}",
+              "type": "color"
+            },
+            "Loading": {
+              "value": "{Color.Base.White}",
+              "type": "color"
+            },
+            "Disabled": {
+              "value": "{Color.Base.White}",
+              "type": "color"
+            }
+          },
+          "Accent": {
+            "Default": {
+              "value": "{Color.Green.400}",
+              "type": "color"
+            },
+            "Pressed": {
+              "value": "{Color.Green.500}",
+              "type": "color"
+            },
+            "Loading": {
+              "value": "{Color.Green.500}",
+              "type": "color"
+            },
+            "Disabled": {
+              "value": "{Color.Green.050}",
+              "type": "color"
+            }
+          }
+        },
+        "Negative": {
+          "Default": {
+            "value": "{Color.Red.600}",
+            "type": "color"
+          },
+          "Pressed": {
+            "value": "{Color.Red.700}",
+            "type": "color"
+          },
+          "Loading": {
+            "value": "{Color.Red.700}",
+            "type": "color"
+          },
+          "Disabled": {
+            "value": "{Color.Red.300}",
+            "type": "color"
+          }
+        },
+        "Positive": {
+          "Default": {
+            "value": "{Color.Green.400}",
+            "type": "color"
+          },
+          "Pressed": {
+            "value": "{Color.Green.500}",
+            "type": "color"
+          },
+          "Loading": {
+            "value": "{Color.Green.500}",
+            "type": "color"
+          },
+          "Disabled": {
+            "value": "{Color.Green.050}",
+            "type": "color"
+          }
+        },
+        "Context": {
+          "Rewards": {
+            "Strong": {
+              "value": "{Color.Blue.500}",
+              "type": "color"
+            },
+            "Subtle": {
+              "value": "{Color.Blue.050}",
+              "type": "color"
+            }
+          },
+          "Cashback": {
+            "Strong": {
+              "value": "{Color.Yellow.300}",
+              "type": "color"
+            },
+            "Subtle": {
+              "value": "{Color.Yellow.200}",
+              "type": "color"
+            }
+          }
+        }
+      },
+      "Tag": {
+        "Base": {
+          "Positive": {
+            "value": "{Color.Green.100}",
+            "type": "color"
+          },
+          "Negative": {
+            "value": "{Color.Red.100}",
+            "type": "color"
+          },
+          "Action-required": {
+            "value": "{Color.Yellow.100}",
+            "type": "color"
+          },
+          "In-progress": {
+            "value": "{Color.Blue.100}",
+            "type": "color"
+          },
+          "Signal": {
+            "value": "{Color.Purple.200}",
+            "type": "color"
+          }
+        },
+        "Simple": {
+          "Primary": {
+            "value": "{Color.Graphite.900}",
+            "type": "color"
+          },
+          "Secondary": {
+            "value": "{Color.Base.White}",
+            "type": "color"
+          },
+          "Tertiary": {
+            "value": "{Color.Graphite.050}",
+            "type": "color"
+          }
+        }
+      },
+      "Asset": {
+        "Strong": {
+          "value": "{Color.Graphite.800}",
+          "type": "color"
+        },
+        "Medium": {
+          "value": "{Color.Graphite.600}",
+          "type": "color"
+        },
+        "Subtle": {
+          "value": "{Color.Graphite.100}",
+          "type": "color"
+        }
+      }
+    },
+    "Text": {
+      "Title": {
+        "Primary": {
+          "value": "{Color.Graphite.900}",
+          "type": "color"
+        },
+        "Secondary": {
+          "value": "{Color.Graphite.600}",
+          "type": "color"
+        },
+        "Tertiary": {
+          "value": "{Color.Graphite.500}",
+          "type": "color"
+        },
+        "Hint": {
+          "value": "{Color.Graphite.400}",
+          "type": "color"
+        },
+        "Inverted": {
+          "value": "{Color.Base.White}",
+          "type": "color"
+        }
+      },
+      "Base": {
+        "Primary": {
+          "value": "{Color.Graphite.900}",
+          "type": "color"
+        },
+        "Secondary": {
+          "value": "{Color.Graphite.600}",
+          "type": "color"
+        },
+        "Tertiary": {
+          "value": "{Color.Graphite.500}",
+          "type": "color"
+        },
+        "Hint": {
+          "value": "{Color.Graphite.400}",
+          "type": "color"
+        },
+        "Mask": {
+          "value": "{Color.Graphite.300}",
+          "type": "color"
+        },
+        "Inverted": {
+          "value": "{Color.Base.White}",
+          "type": "color"
+        },
+        "Disabled": {
+          "value": "{Color.Graphite.100}",
+          "type": "color"
+        }
+      },
+      "Interaction": {
+        "Basic": {
+          "Primary": {
+            "Default": {
+              "value": "{Color.Base.White}",
+              "type": "color"
+            },
+            "Pressed": {
+              "value": "{Color.Base.White}",
+              "type": "color"
+            },
+            "Disabled": {
+              "value": "{Color.Graphite.400}",
+              "type": "color"
+            }
+          },
+          "Secondary": {
+            "Default": {
+              "value": "{Color.Graphite.900}",
+              "type": "color"
+            },
+            "Pressed": {
+              "value": "{Color.Graphite.900}",
+              "type": "color"
+            },
+            "Disabled": {
+              "value": "{Color.Graphite.400}",
+              "type": "color"
+            }
+          },
+          "Tertiary": {
+            "Default": {
+              "value": "{Color.Graphite.900}",
+              "type": "color"
+            },
+            "Pressed": {
+              "value": "{Color.Graphite.900}",
+              "type": "color"
+            },
+            "Disabled": {
+              "value": "{Color.Graphite.400}",
+              "type": "color"
+            }
+          },
+          "Accent": {
+            "Default": {
+              "value": "{Color.Purple.500}",
+              "type": "color"
+            },
+            "Pressed": {
+              "value": "{Color.Purple.600}",
+              "type": "color"
+            },
+            "Disabled": {
+              "value": "{Color.Purple.300}",
+              "type": "color"
+            }
+          }
+        },
+        "Positive": {
+          "Default": {
+            "value": "{Color.Graphite.900}",
+            "type": "color"
+          },
+          "Pressed": {
+            "value": "{Color.Graphite.900}",
+            "type": "color"
+          },
+          "Disabled": {
+            "value": "{Color.Graphite.400}",
+            "type": "color"
+          }
+        },
+        "Negative": {
+          "Default": {
+            "value": "{Color.Base.White}",
+            "type": "color"
+          },
+          "Pressed": {
+            "value": "{Color.Base.White}",
+            "type": "color"
+          },
+          "Disabled": {
+            "value": "{Color.Base.White}",
+            "type": "color"
+          }
+        }
+      },
+      "Tag": {
+        "Positive": {
+          "value": "{Color.Green.700}",
+          "type": "color"
+        },
+        "Negative": {
+          "value": "{Color.Red.600}",
+          "type": "color"
+        },
+        "Action-required": {
+          "value": "{Color.Yellow.700}",
+          "type": "color"
+        },
+        "In-progress": {
+          "value": "{Color.Blue.700}",
+          "type": "color"
+        }
+      },
+      "Status": {
+        "Positive": {
+          "value": "{Color.Green.600}",
+          "type": "color"
+        },
+        "Negative": {
+          "value": "{Color.Red.600}",
+          "type": "color"
+        }
+      }
+    },
+    "Border": {
+      "Base": {
+        "Divider": {
+          "value": "{Color.Graphite.100}",
+          "type": "color"
+        },
+        "Positive": {
+          "Medium": {
+            "value": "{Color.Green.400}",
+            "type": "color"
+          },
+          "Strong": {
+            "value": "{Color.Green.600}",
+            "type": "color"
+          }
+        },
+        "Negative": {
+          "value": "{Color.Red.600}",
+          "type": "color"
+        },
+        "Action-required": {
+          "Medium": {
+            "value": "{Color.Yellow.400}",
+            "type": "color"
+          },
+          "Strong": {
+            "value": "{Color.Yellow.500}",
+            "type": "color"
+          }
+        },
+        "In-progress": {
+          "value": "{Color.Blue.500}",
+          "type": "color"
+        },
+        "Progress-bar": {
+          "value": "{Color.Graphite.100}",
+          "type": "color"
+        },
+        "Flag": {
+          "value": "{Color.Graphite.050}",
+          "type": "color"
+        }
+      },
+      "Interaction": {
+        "Tag-hyperlink": {
+          "value": "{Color.Opasity.Graphite.900.25}",
+          "type": "color"
+        },
+        "Checkbox": {
+          "value": "{Color.Graphite.300}",
+          "type": "color"
+        },
+        "Input": {
+          "value": "{Color.Purple.500}",
+          "type": "color"
+        }
+      }
+    },
+    "Icon": {
+      "Base": {
+        "Primary": {
+          "value": "{Color.Graphite.600}",
+          "type": "color"
+        },
+        "Secondary": {
+          "value": "{Color.Graphite.400}",
+          "type": "color"
+        },
+        "Strong": {
+          "value": "{Color.Purple.500}",
+          "type": "color"
+        },
+        "Subtle": {
+          "value": "{Color.Purple.100}",
+          "type": "color"
+        },
+        "Contrast": {
+          "value": "{Color.Graphite.900}",
+          "type": "color"
+        },
+        "Inverted": {
+          "value": "{Color.Base.White}",
+          "type": "color"
+        },
+        "Tertiary": {
+          "value": "{Color.Graphite.200}",
+          "type": "color"
+        }
+      },
+      "Context": {
+        "Rewards": {
+          "value": "{Color.Blue.500}",
+          "type": "color"
+        },
+        "Cashback": {
+          "value": "{Color.Yellow.400}",
+          "type": "color"
+        },
+        "Amega": {
+          "value": "{Color.Green.400}",
+          "type": "color"
+        }
+      }
+    },
+    "Overlay": {
+      "Dark": {
+        "value": "{Color.Opasity.Black.60}",
+        "type": "color"
+      },
+      "Light": {
+        "Strong": {
+          "value": "{Color.Opasity.Graphite.050.80}",
+          "type": "color"
+        },
+        "Subtle": {
+          "value": "{Color.Opasity.Graphite.050.40}",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "Spacing": {
+    "Base": {
+      "1": {
+        "value": 4,
+        "type": "number"
+      },
+      "2": {
+        "value": 8,
+        "type": "number"
+      },
+      "3": {
+        "value": 12,
+        "type": "number"
+      },
+      "4": {
+        "value": 16,
+        "type": "number"
+      },
+      "5": {
+        "value": 20,
+        "type": "number"
+      },
+      "6": {
+        "value": 24,
+        "type": "number"
+      },
+      "7": {
+        "value": 32,
+        "type": "number"
+      }
+    }
+  }
+}

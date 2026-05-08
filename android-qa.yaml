@@ -1,0 +1,58 @@
+appId: com.amega.capital.qa
+tags:
+  - android
+  - passing
+  - advanced
+---
+- launchApp
+- runFlow:
+    when:
+      visible:
+        id: 'intro_signin'
+    commands:
+      - tapOn:
+          id: 'intro_signin'
+- runFlow:
+    when:
+      visible:
+        id: 'tab_portfolio'
+    commands:
+      - tapOn:
+          id: 'tab_portfolio'
+- runFlow:
+    when:
+      visible:
+        id: 'portfolio_signin'
+    commands:
+      - tapOn:
+          id: 'portfolio_signin'
+- runFlow:
+    when:
+      visible:
+        id: 'signin_email'
+    commands:
+      - tapOn:
+          id: 'signin_email'
+      - inputText: 'as@amegafx.com'
+- runFlow:
+    when:
+      visible:
+        id: 'signin_password'
+    commands:
+      - tapOn:
+          id: 'signin_password'
+      - inputText: 'Tester01'
+- runFlow:
+    when:
+      visible:
+        id: 'signin_remember_me'
+    commands:
+      - tapOn:
+          id: 'signin_remember_me'
+- runFlow:
+    when:
+      visible:
+        id: 'signin_submit'
+    commands:
+      - tapOn:
+          id: 'signin_submit'
