@@ -1,0 +1,49 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/GeneralSans-Medium.ttf",
+      "sha1": "431e31acf2884fbb9a558d1613c5882e2d22df3c"
+    },
+    {
+      "path": "assets/fonts/GeneralSans-Regular.ttf",
+      "sha1": "ae4099e6d155bcc38835446e662e06ede9ba4a96"
+    },
+    {
+      "path": "assets/fonts/GeneralSans-Semibold.ttf",
+      "sha1": "afb7faf4a0c0eb5aa371c3f4d96fbd981d11913c"
+    },
+    {
+      "path": "assets/fonts/Inter-Medium.ttf",
+      "sha1": "243c888422f809c847db9351804ceabe950d16b6"
+    },
+    {
+      "path": "assets/fonts/Inter-Regular.ttf",
+      "sha1": "c72a16b3b025c89e6105f304859004fad8516e10"
+    },
+    {
+      "path": "assets/fonts/SpaceGrotesk-Bold.ttf",
+      "sha1": "14f3d7d974d0232f0fba31566783b2c262b4d2a2"
+    },
+    {
+      "path": "assets/fonts/SpaceGrotesk-Light.ttf",
+      "sha1": "d28b8bb3609a9c65c5ad097360a55b24094b0451"
+    },
+    {
+      "path": "assets/fonts/SpaceGrotesk-Medium.ttf",
+      "sha1": "7d2fe2b9e0c9e76ab5bebf7cd766acd1d5c4dcbb"
+    },
+    {
+      "path": "assets/fonts/SpaceGrotesk-Regular.ttf",
+      "sha1": "23aaf86d93b2c94ebf6fd588f0bc5f62194889f6"
+    },
+    {
+      "path": "assets/fonts/SpaceGrotesk-SemiBold.ttf",
+      "sha1": "e99da7dd55ac9ed7675a533c5a98cd7797613a67"
+    },
+    {
+      "path": "assets/fonts/Unbounded-Medium.ttf",
+      "sha1": "b9496b023b0e080c0c5cf488879420ed3d2fb0b4"
+    }
+  ]
+}

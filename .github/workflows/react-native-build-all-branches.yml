@@ -1,0 +1,306 @@
+name: React Native Build and Deployment for AAB
+
+on:
+  #  push:
+  #    branches:
+  #      - dummy/*
+  #  pull_request:
+  #    branches:
+  #      - dummy/*
+  workflow_dispatch:
+
+env:
+  # KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+  # KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+  # KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+  # Define the ENVIRONMENT variable based on branch dynamically, if needed
+  ENVIRONMENT: ${{ github.ref }}
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Determine latest version branch
+        id: determine_version
+        run: |
+          echo "Determining the latest version branch..."
+          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+            LATEST_BRANCH=$(git branch -r | grep 'origin/testing' | sort -V | tail -n 1)
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+            LATEST_BRANCH=$(git branch -r | grep 'origin/development' | sort -V | tail -n 1)
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+            LATEST_BRANCH=$(git branch -r | grep 'origin/staging/' | sort -V | tail -n 1)
+          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+            LATEST_BRANCH="origin/main"
+          fi
+          echo "LATEST_BRANCH=${LATEST_BRANCH}" >> $GITHUB_ENV
+          echo "Latest branch set to ${LATEST_BRANCH}"
+
+      - name: Checkout the latest version branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.determine_version.outputs.latest_branch }}
+          fetch-depth: 0
+
+      #      - name: Set up environment file
+      #        run: |
+      #          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+      #            echo "${{ secrets.ENV_TESTING }}" > .env.qa
+      #            echo "${{ secrets.ENV_TESTING }}" > .env
+      #            export ENVFILE='.env.qa'
+      #            cat .env.qa
+      #            echo $ENVFILE
+      #          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+      #            echo "${{ secrets.ENV_DEVELOPMENT }}" > .env.development
+      #            echo "${{ secrets.ENV_DEVELOPMENT }}" > .env
+      #            export ENVFILE=.env.development
+      #            cat .env.development
+      #            echo $ENVFILE
+      #          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+      #            echo "${{ secrets.ENV_RELEASE }}" > .env.staging
+      #            echo "${{ secrets.ENV_RELEASE }}" > .env
+      #            export ENVFILE=.env.staging
+      #            cat .env.staging
+      #            echo $ENVFILE
+      #          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+      #            echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
+      #            echo "${{ secrets.ENV_PRODUCTION }}" > .env
+      #            export ENVFILE=.env.production
+      #            cat .env.production
+      #            echo $ENVFILE
+      #          fi
+
+      - name: Set up environment file
+        run: |
+          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+            export ENVFILE='.env.qa'
+            cat .env.qa
+            echo $ENVFILE
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+            export ENVFILE=.env.development
+            cat .env.development
+            echo $ENVFILE
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+            export ENVFILE=.env.staging
+            cat .env.staging
+            echo $ENVFILE
+          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+            export ENVFILE=.env.production
+            cat .env.production
+            echo $ENVFILE
+          fi
+
+      # - name: Use environment file
+      #   run: |
+      #     source .env
+      #     echo "MT5_API_URL is $MT5_API_URL"
+      #     echo "WEBSOCKET_BASE_URL is $WEBSOCKET_BASE_URL"
+      #     echo "CMS_URL is $CMS_URL"
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Create Service Account JSON for Google Play
+        run: |
+          echo '${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_CAPITAL_JSON }}' > ${{ github.workspace }}/android/app/google-play-service-account.json
+
+      - name: Install Node.js (v18)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Prepare build
+        run: cd android && chmod +x ./gradlew
+
+      # - name: Check App Module Dependencies
+      #   run: |
+      #     cd android
+      #     mkdir -p outputs/dependencies  # Ensure the directory exists
+      #     ./gradlew app:dependencies --configuration qaReleaseCompileClasspath' > outputs/dependencies/qaReleaseCompileClasspath'.txt
+
+      # - name: List Dependencies output directory
+      #   run: ls -la ./android/outputs/dependencies/
+      #   working-directory: .
+
+      # - name: Upload Dependency Graph
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: app-dependencies
+      #     path: android/outputs/dependencies/releaseCompileClasspath.txt
+
+      # - name: Clean and Prepare Build
+      #   run: |
+      #     cd android
+      #     ./gradlew clean build --stacktrace --info
+
+      #      - name: Build AAB
+      #        env:
+      #          # VERSION_CODE: 25  # Set these as environment variables or derive them dynamically
+      #          VERSION_NAME: "1.0.0"
+      #        run: |
+      #          VERSION_CODE=$(( 60 + ${{ github.run_number }} ))
+      #          echo "Building with versionCode: $VERSION_CODE"
+      #          echo "Building with versionName: $VERSION_NAME"
+      #          cd android
+      #          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+      #            echo "${{ secrets.ENV_TESTING }}" > .env.qa
+      #            echo "${{ secrets.ENV_TESTING }}" > .env
+      #            export ENVFILE=.env.qa
+      #            cat .env.qa
+      #            echo "Building with ENVFILE: $ENVFILE"
+      #            echo "./gradlew bundleQaRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info"
+      #            ./gradlew bundleQaRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info
+      #          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+      #            echo "${{ secrets.ENV_DEVELOPMENT }}" > .env.development
+      #            echo "${{ secrets.ENV_DEVELOPMENT}}" > .env
+      #            export ENVFILE=.env.development
+      #            cat .env.development
+      #            echo "Building with ENVFILE: $ENVFILE"
+      #            echo "./gradlew bundleDevRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info"
+      #            ./gradlew bundleDevRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info
+      #          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+      #            echo "${{ secrets.ENV_RELEASE }}" > .env.staging
+      #            echo "${{ secrets.ENV_RELEASE }}" > .env
+      #            export ENVFILE=.env.staging
+      #            cat .env.staging
+      #            echo "Building with ENVFILE: $ENVFILE"
+      #            echo "./gradlew bundleStageRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info"
+      #            ./gradlew bundleStageRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info
+      #          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+      #            echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
+      #            echo "${{ secrets.ENV_PRODUCTION }}" > .env
+      #            export ENVFILE=.env.production
+      #            cat .env.production
+      #            echo "Building with ENVFILE: $ENVFILE"
+      #            echo "./gradlew bundleProdRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info"
+      #            ./gradlew bundleProdRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info
+      #          fi
+      #          echo "Building with ENVFILE: $ENVFILE"
+      #          ./gradlew bundleRelease \
+      #             -Pandroid.injected.signing.store.file=${{ github.workspace }}/android/app/release.keystore \
+      #             -Pandroid.injected.signing.store.password=${{ env.KEYSTORE_PASSWORD }} \
+      #             -Pandroid.injected.signing.key.alias=${{ env.KEY_ALIAS }} \
+      #             -Pandroid.injected.signing.key.password=${{ env.KEY_PASSWORD }} \
+      #             -PversionCode=$VERSION_CODE \
+      #             -PversionName=$VERSION_NAME \
+      #             --stacktrace --info
+      #          echo "./gradlew bundleRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info"
+      #          ./gradlew bundleRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME --stacktrace --info
+
+      - name: Build AAB
+        run: |
+          cd android
+          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+            export ENVFILE=.env.qa
+            echo "Building with ENVFILE: $ENVFILE"
+            echo "./gradlew bundleQaRelease --stacktrace --info"
+            export SENTRY_DISABLE_AUTO_UPLOAD=true && export ENVFILE=.env.qa && ./gradlew bundleQaRelease --stacktrace --info
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+            export ENVFILE=.env.development
+            echo "Building with ENVFILE: $ENVFILE"
+            echo "./gradlew bundleDevRelease --stacktrace --info"
+            export SENTRY_DISABLE_AUTO_UPLOAD=true && export ENVFILE=.env.development && ./gradlew bundleDevRelease --stacktrace --info
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+            export ENVFILE=.env.staging
+            echo "Building with ENVFILE: $ENVFILE"
+            echo "./gradlew bundleStageRelease --stacktrace --info"
+            export SENTRY_DISABLE_AUTO_UPLOAD=true && export ENVFILE=.env.staging && ./gradlew bundleStageRelease --stacktrace --info
+          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+            export ENVFILE=.env.production
+            echo "Building with ENVFILE: $ENVFILE"
+            echo "./gradlew bundleProdRelease --stacktrace --info"
+            export SENTRY_DISABLE_AUTO_UPLOAD=true && export ENVFILE=.env.production && ./gradlew bundleProdRelease --stacktrace --info
+          fi
+
+      #     - name: Save AAB File
+      #       if: always()  # This ensures the AAB is saved regardless of the build outcome
+      #       uses: actions/upload-artifact@v4
+      #       with:
+      #         name: app-release-bundle
+      #         path: android/app/build/outputs/bundle/release/*.aab
+
+      #      - name: Publish AAB to Google Play
+      #        run: |
+      #          cd android
+      #          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+      #            echo "${{ secrets.ENV_TESTING }}" > .env.qa
+      #            echo "${{ secrets.ENV_TESTING }}" > .env
+      #            export ENVFILE=.env.qa
+      #            cat .env.qa
+      #            echo "Publishing with ENVFILE: $ENVFILE"
+      #            echo "./gradlew publishQaReleaseBundle --track internal --release-status draft --stacktrace --info"
+      #            ./gradlew publishQaReleaseBundle --track internal --release-status draft --stacktrace --info
+      #          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+      #            echo "${{ secrets.ENV_DEVELOPMENT }}" > .env.development
+      #            echo "${{ secrets.ENV_DEVELOPMENT }}" > .env
+      #            export ENVFILE=.env.development
+      #            cat .env.development
+      #            echo "Publishing with ENVFILE: $ENVFILE"
+      #            echo "./gradlew publishDevReleaseBundle --track internal --stacktrace --info"
+      #            ./gradlew publishDevReleaseBundle --track internal --stacktrace --info
+      #          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+      #            echo "${{ secrets.ENV_RELEASE }}" > .env.staging
+      #            echo "${{ secrets.ENV_RELEASE }}" > .env
+      #            export ENVFILE=.env.staging
+      #            cat .env.staging
+      #            echo "Publishing with ENVFILE: $ENVFILE"
+      #            echo "./gradlew publishStageReleaseBundle --track internal --stacktrace --info"
+      #            ./gradlew publishStageReleaseBundle --track internal --stacktrace --info
+      #          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+      #            echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
+      #            echo "${{ secrets.ENV_PRODUCTION }}" > .env
+      #            export ENVFILE=.env.production
+      #            cat .env.production
+      #            echo "Publishing with ENVFILE: $ENVFILE"
+      #            echo "./gradlew publishProdReleaseBundle --track internal --stacktrace --info"
+      #            ./gradlew publishProdReleaseBundle --track internal --stacktrace --info
+      #          fi
+      #         echo "Publishing with ENVFILE: $ENVFILE"
+      #         ./gradlew publishBundle --track internal --stacktrace --info
+
+      - name: Publish AAB to Google Play
+        run: |
+          cd android
+          if [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/testing ]]; then
+            export ENVFILE=.env.qa
+            export SENTRY_DISABLE_AUTO_UPLOAD=true
+            echo "Publishing with ENVFILE: $ENVFILE"
+            echo "./gradlew publishQaReleaseBundle --track internal --release-status draft --stacktrace --info"
+            ./gradlew publishQaReleaseBundle --track internal --release-status draft --stacktrace --info
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/development ]]; then
+            export ENVFILE=.env.development
+            export SENTRY_DISABLE_AUTO_UPLOAD=true
+            echo "Publishing with ENVFILE: $ENVFILE"
+            echo "./gradlew publishDevReleaseBundle --track internal --release-status draft --stacktrace --info"
+            ./gradlew publishDevReleaseBundle  --track internal --release-status draft --stacktrace --info
+          elif [[ "${{ env.ENVIRONMENT }}" =~ ^refs/heads/release ]]; then
+            export ENVFILE=.env.staging
+            export SENTRY_DISABLE_AUTO_UPLOAD=true
+            echo "Publishing with ENVFILE: $ENVFILE"
+            echo "./gradlew publishStageReleaseBundle  --track internal --release-status draft --stacktrace --info"
+            ./gradlew publishStageReleaseBundle  --track internal --release-status draft --stacktrace --info
+          elif [[ "${{ env.ENVIRONMENT }}" == "refs/heads/main" ]]; then
+            export ENVFILE=.env.production
+            export SENTRY_DISABLE_AUTO_UPLOAD=true
+            echo "Publishing with ENVFILE: $ENVFILE"
+            echo "./gradlew publishProdReleaseBundle --track internal --release-status draft --stacktrace --info"
+            ./gradlew publishProdReleaseBundle --track internal --release-status draft --stacktrace --info
+          fi
+
+      - name: Cleanup Post-Build
+        if: always()
+        run: rm -f ${{ github.workspace }}/android/app/google-play-service-account.json

@@ -1,0 +1,160 @@
+diff --git a/node_modules/@cherry-soft/react-native-basic-pagination/lib/index.d.ts b/node_modules/@cherry-soft/react-native-basic-pagination/lib/index.d.ts
+index 0d4e35e..b4fb85f 100644
+--- a/node_modules/@cherry-soft/react-native-basic-pagination/lib/index.d.ts
++++ b/node_modules/@cherry-soft/react-native-basic-pagination/lib/index.d.ts
+@@ -1,3 +1,3 @@
+ import { PaginationProps } from './props';
+-declare const Pagination: ({ totalItems, pageSize, pagesToDisplay, onPageChange, showLastPagesButtons, currentPage, containerStyle, btnStyle, textStyle, activeBtnStyle, activeTextStyle, }: PaginationProps) => JSX.Element;
++declare const Pagination: ({ totalItems, pageSize, pagesToDisplay, onPageChange, showLastPagesButtons, currentPage, containerStyle, btnStyle, textStyle, activeBtnStyle, activeTextStyle,disabled }: PaginationProps) => JSX.Element;
+ export default Pagination;
+diff --git a/node_modules/@cherry-soft/react-native-basic-pagination/lib/index.js b/node_modules/@cherry-soft/react-native-basic-pagination/lib/index.js
+index c13279d..76ba796 100644
+--- a/node_modules/@cherry-soft/react-native-basic-pagination/lib/index.js
++++ b/node_modules/@cherry-soft/react-native-basic-pagination/lib/index.js
+@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
+ import { usePagination, isCurrentPage } from './src/hooks/usePagination';
+ import { PaginationButton } from './src/PaginationButton';
+ import { PaginationSideButtons } from './src/PaginationSideButtons';
+-const Pagination = ({ totalItems, pageSize = 1, pagesToDisplay = 3, onPageChange, showLastPagesButtons = false, currentPage, containerStyle = {}, btnStyle = {}, textStyle = {}, activeBtnStyle = null, activeTextStyle = null, }) => {
++const Pagination = ({ disabled, totalItems, pageSize = 1, pagesToDisplay = 3, onPageChange, showLastPagesButtons = false, currentPage, containerStyle = {}, btnStyle = {}, textStyle = {}, activeBtnStyle = null, activeTextStyle = null, }) => {
+     const totalPages = useMemo(() => Math.ceil(totalItems / pageSize), [totalItems, pageSize]);
+     const pagination = usePagination(totalItems, pageSize, pagesToDisplay, currentPage);
+     const handleChangePage = (page) => {
+@@ -18,9 +18,10 @@ const Pagination = ({ totalItems, pageSize = 1, pagesToDisplay = 3, onPageChange
+         containerStyle,
+         btnStyle,
+         textStyle,
++        disabled
+     }}>
+-      {pagination.map((pag, index) => (<PaginationButton btnStyle={btnStyle} textStyle={textStyle} activeBtnStyle={activeBtnStyle} activeTextStyle={activeTextStyle} key={index} isActive={isCurrentPage(pag, currentPage)} onPress={() => handleChangePage(pag)}>
+-          {pag}
++        {pagination.map((pag, index) => (<PaginationButton btnStyle={btnStyle} textStyle={textStyle} activeBtnStyle={activeBtnStyle} activeTextStyle={activeTextStyle} key={index} isActive={isCurrentPage(pag, currentPage)} onPress={() => handleChangePage(pag)}>
++            {pag}
+         </PaginationButton>))}
+     </PaginationSideButtons>);
+ };
+diff --git a/node_modules/@cherry-soft/react-native-basic-pagination/lib/props.d.ts b/node_modules/@cherry-soft/react-native-basic-pagination/lib/props.d.ts
+index 89bf31f..5e4066d 100644
+--- a/node_modules/@cherry-soft/react-native-basic-pagination/lib/props.d.ts
++++ b/node_modules/@cherry-soft/react-native-basic-pagination/lib/props.d.ts
+@@ -11,4 +11,5 @@ export interface PaginationProps {
+     textStyle?: StyleProp<TextStyle>;
+     activeBtnStyle?: StyleProp<ViewStyle>;
+     activeTextStyle?: StyleProp<TextStyle>;
++    disabled?:'left' | 'right'
+ }
+diff --git a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/PaginationButton.d.ts b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/PaginationButton.d.ts
+index 46ee97d..d0a33b1 100644
+--- a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/PaginationButton.d.ts
++++ b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/PaginationButton.d.ts
+@@ -1,2 +1,2 @@
+ import { PaginationButtonProps } from './props';
+-export declare const PaginationButton: ({ onPress, children, isActive, btnStyle, textStyle, activeBtnStyle, activeTextStyle, }: PaginationButtonProps) => JSX.Element;
++export declare const PaginationButton: ({ onPress, children, isActive, btnStyle, textStyle, activeBtnStyle, activeTextStyle,disabled}: PaginationButtonProps) => JSX.Element;
+diff --git a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/PaginationButton.js b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/PaginationButton.js
+index 7b095b1..7d58248 100644
+--- a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/PaginationButton.js
++++ b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/PaginationButton.js
+@@ -1,22 +1,23 @@
+ import React from 'react';
+ import { Text, Pressable } from 'react-native';
+ import { styles } from './styles';
+-export const PaginationButton = ({ onPress = () => { }, children, isActive = false, btnStyle, textStyle, activeBtnStyle, activeTextStyle, }) => {
+-    return (<Pressable style={[
+-            styles.button,
+-            btnStyle,
+-            isActive ? (activeBtnStyle ? activeBtnStyle : styles.buttonActive) : {},
+-        ]} onPress={onPress}>
+-      <Text style={[
+-            styles.text,
+-            textStyle,
+-            isActive
+-                ? activeTextStyle
+-                    ? activeTextStyle
+-                    : styles.activeText
+-                : {},
+-        ]}>
+-        {children}
+-      </Text>
+-    </Pressable>);
++export const PaginationButton = ({ onPress = () => { }, disabled, children, isActive = false, btnStyle, textStyle, activeBtnStyle, activeTextStyle, }) => {
++  return (<Pressable style={[
++    styles.button,
++    btnStyle,
++    isActive ? (activeBtnStyle ? activeBtnStyle : styles.buttonActive) : {},
++    disabled && { opacity: 0.5 }
++  ]} onPress={onPress}>
++    <Text style={[
++      styles.text,
++      textStyle,
++      isActive
++        ? activeTextStyle
++          ? activeTextStyle
++          : styles.activeText
++        : {},
++    ]}>
++      {children}
++    </Text>
++  </Pressable>);
+ };
+diff --git a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/props.d.ts b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/props.d.ts
+index 2b293a0..f92f9fe 100644
+--- a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/props.d.ts
++++ b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationButton/props.d.ts
+@@ -8,4 +8,5 @@ export interface PaginationButtonProps {
+     textStyle?: StyleProp<TextStyle>;
+     activeBtnStyle?: StyleProp<ViewStyle>;
+     activeTextStyle?: StyleProp<TextStyle>;
++    disabled?:'left' | 'right'
+ }
+diff --git a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationSideButtons/PaginationSideButtons.js b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationSideButtons/PaginationSideButtons.js
+index 51f8142..87e498f 100644
+--- a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationSideButtons/PaginationSideButtons.js
++++ b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationSideButtons/PaginationSideButtons.js
+@@ -2,20 +2,20 @@ import React from 'react';
+ import { View } from 'react-native';
+ import { styles } from './styles';
+ import { PaginationButton } from '../PaginationButton';
+-export const PaginationSideButtons = ({ totalPages, currentPage, children, showLastPagesButtons = false, handleChangePage, containerStyle, textStyle, btnStyle, }) => {
+-    return (<View style={[styles.container, containerStyle]}>
+-      {showLastPagesButtons && (<PaginationButton textStyle={textStyle} btnStyle={btnStyle} onPress={() => handleChangePage('1')}>
+-          {'<<'}
+-        </PaginationButton>)}
+-      <PaginationButton textStyle={textStyle} btnStyle={btnStyle} onPress={() => currentPage > 1 && handleChangePage(`${currentPage - 1}`)}>
+-        {'<'}
+-      </PaginationButton>
+-      {children}
+-      <PaginationButton textStyle={textStyle} btnStyle={btnStyle} onPress={() => currentPage < totalPages && handleChangePage(`${currentPage + 1}`)}>
+-        {'>'}
+-      </PaginationButton>
+-      {showLastPagesButtons && (<PaginationButton textStyle={textStyle} btnStyle={btnStyle} onPress={() => handleChangePage(`${totalPages}`)}>
+-          {'>>'}
+-        </PaginationButton>)}
+-    </View>);
++export const PaginationSideButtons = ({ totalPages, disabled, currentPage, children, showLastPagesButtons = false, handleChangePage, containerStyle, textStyle, btnStyle, }) => {
++  return (<View style={[styles.container, containerStyle]}>
++    {showLastPagesButtons && (<PaginationButton textStyle={textStyle} btnStyle={btnStyle} onPress={() => handleChangePage('1')}>
++      {'<<'}
++    </PaginationButton>)}
++    <PaginationButton disabled={disabled === 'left'} textStyle={textStyle} btnStyle={btnStyle} onPress={() => currentPage > 1 && handleChangePage(`${currentPage - 1}`)}>
++      {'<'}
++    </PaginationButton>
++    {children}
++    <PaginationButton disabled={disabled === 'right'} textStyle={textStyle} btnStyle={btnStyle} onPress={() => currentPage < totalPages && handleChangePage(`${currentPage + 1}`)}>
++      {'>'}
++    </PaginationButton>
++    {showLastPagesButtons && (<PaginationButton textStyle={textStyle} btnStyle={btnStyle} onPress={() => handleChangePage(`${totalPages}`)}>
++      {'>>'}
++    </PaginationButton>)}
++  </View>);
+ };
+diff --git a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationSideButtons/props.d.ts b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationSideButtons/props.d.ts
+index 108f475..3989524 100644
+--- a/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationSideButtons/props.d.ts
++++ b/node_modules/@cherry-soft/react-native-basic-pagination/lib/src/PaginationSideButtons/props.d.ts
+@@ -9,4 +9,5 @@ export interface PaginationSideButtonsProps {
+     containerStyle?: StyleProp<ViewStyle>;
+     textStyle?: StyleProp<TextStyle>;
+     btnStyle?: StyleProp<ViewStyle>;
++    disabled?:boolean;
+ }

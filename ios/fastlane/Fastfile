@@ -1,0 +1,32 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+
+    # Increment build number automatically
+    increment_build_number_in_xcodeproj(
+      xcodeproj: "amega.xcodeproj",
+      target: "amegaCapitalQA"
+    )
+
+    # Build the app using your specific workspace and scheme
+    build_app(
+      workspace: "amega.xcworkspace",
+      scheme: "amegaCapitalQA",
+      export_method: "app-store",
+      export_options: {
+        signingStyle: "automatic",
+        provisioningProfiles: {
+          "com.amega.capital.qa" => "com.amega.capital.qa"
+        }
+      }
+    )
+
+    # Upload the build to TestFlight
+    upload_to_testflight(
+      api_key_path: "./AuthKey.json"
+    )
+
+  end
+end

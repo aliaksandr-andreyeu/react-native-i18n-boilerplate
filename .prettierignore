@@ -1,0 +1,7 @@
+.bundle/
+.husky/
+.vscode/
+assets/
+android/
+ios/
+node_modules/

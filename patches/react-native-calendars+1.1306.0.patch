@@ -1,0 +1,164 @@
+diff --git a/node_modules/react-native-calendars/src/calendar/header/index.js b/node_modules/react-native-calendars/src/calendar/header/index.js
+index bd75364..d398672 100644
+--- a/node_modules/react-native-calendars/src/calendar/header/index.js
++++ b/node_modules/react-native-calendars/src/calendar/header/index.js
+@@ -74,8 +74,8 @@ const CalendarHeader = forwardRef((props, ref) => {
+                 dayStyle.push(style.current[dayTextAtIndex]);
+             }
+             return (<Text allowFontScaling={false} key={index} style={dayStyle} numberOfLines={1} accessibilityLabel={''}>
+-          {day}
+-        </Text>);
++                {day}
++            </Text>);
+         });
+     }, [firstDay, current, numberOfDaysCondition, numberOfDays, disabledDaysIndexes]);
+     const _renderHeader = () => {
+@@ -87,10 +87,10 @@ const CalendarHeader = forwardRef((props, ref) => {
+             return customHeaderTitle;
+         }
+         return (<Fragment>
+-        <Text allowFontScaling={false} style={style.current.monthText} testID={`${testID}.title`} {...webProps}>
+-          {formatNumbers(month?.toString(monthFormat))}
+-        </Text>
+-      </Fragment>);
++            <Text allowFontScaling={false} style={style.current.monthText} testID={`${testID}.title`} {...webProps}>
++                {formatNumbers(month?.toString(monthFormat))}
++            </Text>
++        </Fragment>);
+     };
+     const _renderArrow = (direction) => {
+         if (hideArrows) {
+@@ -103,37 +103,37 @@ const CalendarHeader = forwardRef((props, ref) => {
+         const imageSource = isLeft ? require('../img/previous.png') : require('../img/next.png');
+         const renderArrowDirection = isLeft ? 'left' : 'right';
+         return (<TouchableOpacity onPress={onPress} disabled={shouldDisable} style={style.current.arrow} hitSlop={hitSlop} testID={`${testID}.${arrowId}`}>
+-        {renderArrow ? (renderArrow(renderArrowDirection)) : (<Image source={imageSource} style={shouldDisable ? style.current.disabledArrowImage : style.current.arrowImage}/>)}
+-      </TouchableOpacity>);
++            {renderArrow ? (renderArrow(renderArrowDirection)) : (<Image source={imageSource} style={shouldDisable ? style.current.disabledArrowImage : style.current.arrowImage} />)}
++        </TouchableOpacity>);
+     };
+     const renderIndicator = () => {
+         if (displayLoadingIndicator) {
+-            return (<ActivityIndicator color={theme?.indicatorColor} testID={`${testID}.loader`}/>);
++            return (<ActivityIndicator color={theme?.indicatorColor} testID={`${testID}.loader`} />);
+         }
+     };
+     const renderWeekNumbersSpace = () => {
+-        return showWeekNumbers && <View style={style.current.dayHeader}/>;
++        return showWeekNumbers && <View style={style.current.dayHeader} />;
+     };
+     const renderDayNames = () => {
+         if (!hideDayNames) {
+             return (<View style={dayNamesStyle} testID={`${testID}.dayNames`}>
+-          {renderWeekNumbersSpace()}
+-          {renderWeekDays}
+-        </View>);
++                {renderWeekNumbersSpace()}
++                {renderWeekDays}
++            </View>);
+         }
+     };
+     return (<View testID={testID} style={propsStyle} accessible accessibilityRole={'adjustable'} accessibilityActions={accessibilityActions} onAccessibilityAction={onAccessibilityAction} accessibilityElementsHidden={accessibilityElementsHidden} // iOS
+-     importantForAccessibility={importantForAccessibility} // Android
++        importantForAccessibility={importantForAccessibility} // Android
+     >
+-      <View style={headerStyle}>
+-        {_renderArrow('left')}
+-        <View style={style.current.headerContainer}>
+-          {_renderHeader()}
+-          {renderIndicator()}
++        <View style={headerStyle}>
++            {_renderArrow('left')}
++            <View style={style.current.headerContainer}>
++                {_renderHeader()}
++                {renderIndicator()}
++            </View>
++            {_renderArrow('right')}
+         </View>
+-        {_renderArrow('right')}
+-      </View>
+-      {renderDayNames()}
++        {!!props.renderDays ? props.renderDays() : renderDayNames()}
+     </View>);
+ });
+ export default CalendarHeader;
+diff --git a/node_modules/react-native-calendars/src/calendar/index.js b/node_modules/react-native-calendars/src/calendar/index.js
+index 6f46e8a..64e08b4 100644
+--- a/node_modules/react-native-calendars/src/calendar/index.js
++++ b/node_modules/react-native-calendars/src/calendar/index.js
+@@ -89,23 +89,23 @@ const Calendar = (props) => {
+     }, [onSwipeLeft, onSwipeRight]);
+     const renderWeekNumber = (weekNumber) => {
+         return (<View style={style.current.dayContainer} key={`week-container-${weekNumber}`}>
+-        <BasicDay key={`week-${weekNumber}`} marking={weekNumberMarking.current} 
+-        // state='disabled'
+-        theme={theme} testID={`${testID}.weekNumber_${weekNumber}`}>
+-          {weekNumber}
+-        </BasicDay>
+-      </View>);
++            <BasicDay key={`week-${weekNumber}`} marking={weekNumberMarking.current}
++                // state='disabled'
++                theme={theme} testID={`${testID}.weekNumber_${weekNumber}`}>
++                {weekNumber}
++            </BasicDay>
++        </View>);
+     };
+     const renderDay = (day, id) => {
+         const dayProps = extractDayProps(props);
+         if (!sameMonth(day, currentMonth) && hideExtraDays) {
+-            return <View key={id} style={style.current.emptyDayContainer}/>;
++            return <View key={id} style={style.current.emptyDayContainer} />;
+         }
+         const dateString = toMarkingFormat(day);
+         const isControlled = isEmpty(props.context);
+         return (<View style={style.current.dayContainer} key={id}>
+-        <Day {...dayProps} testID={`${testID}.day_${dateString}`} date={dateString} state={getState(day, currentMonth, props, isControlled)} marking={markedDates?.[dateString]} onPress={_onDayPress} onLongPress={onLongPressDay}/>
+-      </View>);
++            <Day {...dayProps} testID={`${testID}.day_${dateString}`} date={dateString} state={getState(day, currentMonth, props, isControlled)} marking={markedDates?.[dateString]} onPress={_onDayPress} onLongPress={onLongPressDay} />
++        </View>);
+     };
+     const renderWeek = (days, id) => {
+         const week = [];
+@@ -116,8 +116,8 @@ const Calendar = (props) => {
+             week.unshift(renderWeekNumber(days[days.length - 1].getWeek()));
+         }
+         return (<View style={style.current.week} key={id}>
+-        {week}
+-      </View>);
++            {week}
++        </View>);
+     };
+     const renderMonth = () => {
+         const shouldShowSixWeeks = showSixWeeks && !hideExtraDays;
+@@ -139,10 +139,11 @@ const Calendar = (props) => {
+     }, [currentMonth, displayLoadingIndicator, markedDates]);
+     const renderHeader = () => {
+         const headerProps = extractHeaderProps(props);
++        console.log(props)
+         const ref = customHeader ? undefined : header;
+         const CustomHeader = customHeader;
+         const HeaderComponent = customHeader ? CustomHeader : CalendarHeader;
+-        return (<HeaderComponent {...headerProps} testID={`${testID}.header`} style={headerStyle} ref={ref} month={currentMonth} addMonth={addMonth} displayLoadingIndicator={shouldDisplayIndicator}/>);
++        return (<HeaderComponent renderDays={props.renderDays} {...headerProps} testID={`${testID}.header`} style={headerStyle} ref={ref} month={currentMonth} addMonth={addMonth} displayLoadingIndicator={shouldDisplayIndicator} />);
+     };
+     const GestureComponent = enableSwipeMonths ? GestureRecognizer : View;
+     const swipeProps = {
+@@ -150,12 +151,12 @@ const Calendar = (props) => {
+     };
+     const gestureProps = enableSwipeMonths ? swipeProps : undefined;
+     return (<GestureComponent {...gestureProps}>
+-      <View style={[style.current.container, propsStyle]} testID={testID} accessibilityElementsHidden={accessibilityElementsHidden} // iOS
+-     importantForAccessibility={importantForAccessibility} // Android
+-    >
+-        {renderHeader()}
+-        {renderMonth()}
+-      </View>
++        <View style={[style.current.container, propsStyle]} testID={testID} accessibilityElementsHidden={accessibilityElementsHidden} // iOS
++            importantForAccessibility={importantForAccessibility} // Android
++        >
++            {renderHeader()}
++            {renderMonth()}
++        </View>
+     </GestureComponent>);
+ };
+ export default Calendar;

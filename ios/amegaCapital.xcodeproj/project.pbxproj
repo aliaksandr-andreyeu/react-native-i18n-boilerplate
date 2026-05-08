@@ -1,0 +1,1402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03DAB93C82E8E2D3D25C8684 /* Pods_amegaCapital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044C0A01488E5DF2ED9FCA22 /* Pods_amegaCapital.framework */; };
+		0A6491B096754D7CB245D050 /* SpaceGrotesk-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9880C9CB54254745971F9A19 /* SpaceGrotesk-Medium.ttf */; };
+		0DD0782F9C324F60AB7B1737 /* SpaceGrotesk-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E7DECCAD864ABF849F31C6 /* SpaceGrotesk-SemiBold.ttf */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		3F5F53B2BA394FB6A8D3AAC3 /* SpaceGrotesk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5894143D42444BF8BA2A9FC0 /* SpaceGrotesk-Regular.ttf */; };
+		55106D763CF3431D8B34C014 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CADD539E70B4831B3A796D3 /* SpaceGrotesk-Bold.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9E7094A24A8845BB85ADB3AC /* GeneralSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2268E889AE0E44DB9E7B2A9E /* GeneralSans-Medium.ttf */; };
+		A70C6CF292614C488AF99732 /* Unbounded-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 152879600DB84CF0BBBB8139 /* Unbounded-Medium.ttf */; };
+		B384D0CC3AE82350E16057DD /* Pods_amegaCapital_amegaCapitalQA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13883120879E4149A90C4976 /* Pods_amegaCapital_amegaCapitalQA.framework */; };
+		BAD7D04AAC66453B8FC726A5 /* GeneralSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 009112F8D73A4EB3B1966A6F /* GeneralSans-Semibold.ttf */; };
+		C5ECFA4E1274134B6119CDB0 /* Pods_amegaCapital_amegaCapitalDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D20C765961E0BA2C893264E /* Pods_amegaCapital_amegaCapitalDev.framework */; };
+		CDC1D74AD87BA01972E3CD99 /* Pods_amegaCapital_amegaCapitalStage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4143A8376FDE7BCD5F2B0F /* Pods_amegaCapital_amegaCapitalStage.framework */; };
+		D8E1D8F7069847DAA716E857 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F27ECDD10248E7A571266B /* Inter-Medium.ttf */; };
+		EF09382716824C9C9A189F86 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345C47E21B3D4ED2A2C58F22 /* Inter-Regular.ttf */; };
+		F5E81EC3010744E0BDD0533F /* GeneralSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87AA11A1FAF5416F81D64EAA /* GeneralSans-Regular.ttf */; };
+		F99F50CD1FEA4B40BF54F25D /* SpaceGrotesk-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D56C189AA2E945F9805FD525 /* SpaceGrotesk-Light.ttf */; };
+		FA2300782C35334F00061FAF /* branch.json in Resources */ = {isa = PBXBuildFile; fileRef = FA2300772C35334F00061FAF /* branch.json */; };
+		FA70074B2E98BCC5004C031C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7007492E98BCC5004C031C /* AppDelegate.swift */; };
+		FA70074C2E98BCC5004C031C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FA70074A2E98BCC5004C031C /* PrivacyInfo.xcprivacy */; };
+		FA70074D2E98BCC5004C031C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FA70074A2E98BCC5004C031C /* PrivacyInfo.xcprivacy */; };
+		FA70074E2E98BCC5004C031C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7007492E98BCC5004C031C /* AppDelegate.swift */; };
+		FA70074F2E98BCC5004C031C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FA70074A2E98BCC5004C031C /* PrivacyInfo.xcprivacy */; };
+		FA7007502E98BCC5004C031C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7007492E98BCC5004C031C /* AppDelegate.swift */; };
+		FA7007512E98BCC5004C031C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7007492E98BCC5004C031C /* AppDelegate.swift */; };
+		FA7007522E98BCC5004C031C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FA70074A2E98BCC5004C031C /* PrivacyInfo.xcprivacy */; };
+		FAD979362BCE45FA006503A8 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = FAD979352BCE45FA006503A8 /* assets */; };
+		FAF7C0292D3038BF002D8903 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF7C0282D3038BF002D8903 /* GoogleService-Info.plist */; };
+		FAF7C02B2D304009002D8903 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF7C02A2D304009002D8903 /* GoogleService-Info.plist */; };
+		FAF7C02D2D30401E002D8903 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF7C02C2D30401E002D8903 /* GoogleService-Info.plist */; };
+		FAF7C02F2D304033002D8903 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF7C02E2D304033002D8903 /* GoogleService-Info.plist */; };
+		FAFCD7122C99C85F003DCB28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		FAFCD7132C99C85F003DCB28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		FAFCD7152C99C85F003DCB28 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345C47E21B3D4ED2A2C58F22 /* Inter-Regular.ttf */; };
+		FAFCD7162C99C85F003DCB28 /* branch.json in Resources */ = {isa = PBXBuildFile; fileRef = FA2300772C35334F00061FAF /* branch.json */; };
+		FAFCD7172C99C85F003DCB28 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = FAD979352BCE45FA006503A8 /* assets */; };
+		FAFCD7182C99C85F003DCB28 /* GeneralSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2268E889AE0E44DB9E7B2A9E /* GeneralSans-Medium.ttf */; };
+		FAFCD7192C99C85F003DCB28 /* GeneralSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 009112F8D73A4EB3B1966A6F /* GeneralSans-Semibold.ttf */; };
+		FAFCD71A2C99C85F003DCB28 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE09DBBF2C8448C5007C2F93 /* BootSplash.storyboard */; };
+		FAFCD71B2C99C85F003DCB28 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F27ECDD10248E7A571266B /* Inter-Medium.ttf */; };
+		FAFCD71C2C99C85F003DCB28 /* Unbounded-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 152879600DB84CF0BBBB8139 /* Unbounded-Medium.ttf */; };
+		FAFCD71D2C99C85F003DCB28 /* GeneralSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87AA11A1FAF5416F81D64EAA /* GeneralSans-Regular.ttf */; };
+		FAFCD7312C99C862003DCB28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		FAFCD7322C99C862003DCB28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		FAFCD7342C99C862003DCB28 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345C47E21B3D4ED2A2C58F22 /* Inter-Regular.ttf */; };
+		FAFCD7352C99C862003DCB28 /* branch.json in Resources */ = {isa = PBXBuildFile; fileRef = FA2300772C35334F00061FAF /* branch.json */; };
+		FAFCD7362C99C862003DCB28 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = FAD979352BCE45FA006503A8 /* assets */; };
+		FAFCD7372C99C862003DCB28 /* GeneralSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2268E889AE0E44DB9E7B2A9E /* GeneralSans-Medium.ttf */; };
+		FAFCD7382C99C862003DCB28 /* GeneralSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 009112F8D73A4EB3B1966A6F /* GeneralSans-Semibold.ttf */; };
+		FAFCD7392C99C862003DCB28 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE09DBBF2C8448C5007C2F93 /* BootSplash.storyboard */; };
+		FAFCD73A2C99C862003DCB28 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F27ECDD10248E7A571266B /* Inter-Medium.ttf */; };
+		FAFCD73B2C99C862003DCB28 /* Unbounded-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 152879600DB84CF0BBBB8139 /* Unbounded-Medium.ttf */; };
+		FAFCD73C2C99C862003DCB28 /* GeneralSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87AA11A1FAF5416F81D64EAA /* GeneralSans-Regular.ttf */; };
+		FAFCD7502C99C864003DCB28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		FAFCD7512C99C864003DCB28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		FAFCD7532C99C864003DCB28 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345C47E21B3D4ED2A2C58F22 /* Inter-Regular.ttf */; };
+		FAFCD7542C99C864003DCB28 /* branch.json in Resources */ = {isa = PBXBuildFile; fileRef = FA2300772C35334F00061FAF /* branch.json */; };
+		FAFCD7552C99C864003DCB28 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = FAD979352BCE45FA006503A8 /* assets */; };
+		FAFCD7562C99C864003DCB28 /* GeneralSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2268E889AE0E44DB9E7B2A9E /* GeneralSans-Medium.ttf */; };
+		FAFCD7572C99C864003DCB28 /* GeneralSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 009112F8D73A4EB3B1966A6F /* GeneralSans-Semibold.ttf */; };
+		FAFCD7582C99C864003DCB28 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE09DBBF2C8448C5007C2F93 /* BootSplash.storyboard */; };
+		FAFCD7592C99C864003DCB28 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F27ECDD10248E7A571266B /* Inter-Medium.ttf */; };
+		FAFCD75A2C99C864003DCB28 /* Unbounded-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 152879600DB84CF0BBBB8139 /* Unbounded-Medium.ttf */; };
+		FAFCD75B2C99C864003DCB28 /* GeneralSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87AA11A1FAF5416F81D64EAA /* GeneralSans-Regular.ttf */; };
+		FE09DBC02C8448C5007C2F93 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE09DBBF2C8448C5007C2F93 /* BootSplash.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		009112F8D73A4EB3B1966A6F /* GeneralSans-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GeneralSans-Semibold.ttf"; path = "../assets/fonts/GeneralSans-Semibold.ttf"; sourceTree = "<group>"; };
+		044C0A01488E5DF2ED9FCA22 /* Pods_amegaCapital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_amegaCapital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13883120879E4149A90C4976 /* Pods_amegaCapital_amegaCapitalQA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_amegaCapital_amegaCapitalQA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* amegaCapital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amegaCapital.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = amegaCapital/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = amegaCapital/prod/Info.plist; sourceTree = "<group>"; };
+		152879600DB84CF0BBBB8139 /* Unbounded-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Unbounded-Medium.ttf"; path = "../assets/fonts/Unbounded-Medium.ttf"; sourceTree = "<group>"; };
+		2268E889AE0E44DB9E7B2A9E /* GeneralSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GeneralSans-Medium.ttf"; path = "../assets/fonts/GeneralSans-Medium.ttf"; sourceTree = "<group>"; };
+		2A00D7DFA76A999D1E1FEE31 /* Pods-amegaCapital-amegaCapitalStage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amegaCapital-amegaCapitalStage.debug.xcconfig"; path = "Target Support Files/Pods-amegaCapital-amegaCapitalStage/Pods-amegaCapital-amegaCapitalStage.debug.xcconfig"; sourceTree = "<group>"; };
+		345C47E21B3D4ED2A2C58F22 /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
+		45A253DCA5EDE2E4522B230F /* Pods-amegaCapital-amegaCapitalQA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amegaCapital-amegaCapitalQA.debug.xcconfig"; path = "Target Support Files/Pods-amegaCapital-amegaCapitalQA/Pods-amegaCapital-amegaCapitalQA.debug.xcconfig"; sourceTree = "<group>"; };
+		5894143D42444BF8BA2A9FC0 /* SpaceGrotesk-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceGrotesk-Regular.ttf"; path = "../assets/fonts/SpaceGrotesk-Regular.ttf"; sourceTree = "<group>"; };
+		6C4143A8376FDE7BCD5F2B0F /* Pods_amegaCapital_amegaCapitalStage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_amegaCapital_amegaCapitalStage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D20C765961E0BA2C893264E /* Pods_amegaCapital_amegaCapitalDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_amegaCapital_amegaCapitalDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = amegaCapital/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87AA11A1FAF5416F81D64EAA /* GeneralSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GeneralSans-Regular.ttf"; path = "../assets/fonts/GeneralSans-Regular.ttf"; sourceTree = "<group>"; };
+		8E945F0DA4B06571476C8EF9 /* Pods-amegaCapital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amegaCapital.debug.xcconfig"; path = "Target Support Files/Pods-amegaCapital/Pods-amegaCapital.debug.xcconfig"; sourceTree = "<group>"; };
+		9880C9CB54254745971F9A19 /* SpaceGrotesk-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceGrotesk-Medium.ttf"; path = "../assets/fonts/SpaceGrotesk-Medium.ttf"; sourceTree = "<group>"; };
+		9CADD539E70B4831B3A796D3 /* SpaceGrotesk-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceGrotesk-Bold.ttf"; path = "../assets/fonts/SpaceGrotesk-Bold.ttf"; sourceTree = "<group>"; };
+		A4F27ECDD10248E7A571266B /* Inter-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Medium.ttf"; path = "../assets/fonts/Inter-Medium.ttf"; sourceTree = "<group>"; };
+		A501BDB23A72250C6AC6F657 /* Pods-amegaCapital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amegaCapital.release.xcconfig"; path = "Target Support Files/Pods-amegaCapital/Pods-amegaCapital.release.xcconfig"; sourceTree = "<group>"; };
+		ADB03386B439416CBEAE63CB /* Pods-amegaCapital-amegaCapitalDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amegaCapital-amegaCapitalDev.debug.xcconfig"; path = "Target Support Files/Pods-amegaCapital-amegaCapitalDev/Pods-amegaCapital-amegaCapitalDev.debug.xcconfig"; sourceTree = "<group>"; };
+		B68495D2482C23B6DB3E72BA /* Pods-amegaCapital-amegaCapitalStage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amegaCapital-amegaCapitalStage.release.xcconfig"; path = "Target Support Files/Pods-amegaCapital-amegaCapitalStage/Pods-amegaCapital-amegaCapitalStage.release.xcconfig"; sourceTree = "<group>"; };
+		D56C189AA2E945F9805FD525 /* SpaceGrotesk-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceGrotesk-Light.ttf"; path = "../assets/fonts/SpaceGrotesk-Light.ttf"; sourceTree = "<group>"; };
+		D8E7DECCAD864ABF849F31C6 /* SpaceGrotesk-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceGrotesk-SemiBold.ttf"; path = "../assets/fonts/SpaceGrotesk-SemiBold.ttf"; sourceTree = "<group>"; };
+		E4C9478FBEAC48BB52375FE2 /* Pods-amegaCapital-amegaCapitalDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amegaCapital-amegaCapitalDev.release.xcconfig"; path = "Target Support Files/Pods-amegaCapital-amegaCapitalDev/Pods-amegaCapital-amegaCapitalDev.release.xcconfig"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F402A1484AC6605BDF594D12 /* Pods-amegaCapital-amegaCapitalQA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amegaCapital-amegaCapitalQA.release.xcconfig"; path = "Target Support Files/Pods-amegaCapital-amegaCapitalQA/Pods-amegaCapital-amegaCapitalQA.release.xcconfig"; sourceTree = "<group>"; };
+		FA048A6B2D59EF9700B9A4F2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FA2300772C35334F00061FAF /* branch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = branch.json; path = ../android/app/src/main/assets/branch.json; sourceTree = "<group>"; };
+		FA70072B2E984D59004C031C /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
+		FA7007452E98BCC5004C031C /* amegaCapital-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "amegaCapital-Bridging-Header.h"; path = "amegaCapital/amegaCapital-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA7007462E98BCC5004C031C /* amegaCapitalDev-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "amegaCapitalDev-Bridging-Header.h"; path = "amegaCapital/amegaCapitalDev-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA7007472E98BCC5004C031C /* amegaCapitalQA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "amegaCapitalQA-Bridging-Header.h"; path = "amegaCapital/amegaCapitalQA-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA7007482E98BCC5004C031C /* amegaCapitalStage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "amegaCapitalStage-Bridging-Header.h"; path = "amegaCapital/amegaCapitalStage-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA7007492E98BCC5004C031C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = amegaCapital/AppDelegate.swift; sourceTree = "<group>"; };
+		FA70074A2E98BCC5004C031C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = amegaCapital/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		FA9842BB2E3CC648003BF561 /* AppsFlyerLib.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6UQAD4B3U2:APPSFLYER LTD"; lastKnownFileType = wrapper.xcframework; name = AppsFlyerLib.xcframework; path = Pods/AppsFlyerFramework/binaries/xcframework/full/AppsFlyerLib.xcframework; sourceTree = "<group>"; };
+		FAD979352BCE45FA006503A8 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../assets; sourceTree = "<group>"; };
+		FAF7C0282D3038BF002D8903 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "amegaCapital/dev/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAF7C02A2D304009002D8903 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "amegaCapital/prod/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAF7C02C2D30401E002D8903 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "amegaCapital/qa/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAF7C02E2D304033002D8903 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "amegaCapital/stage/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAFCD7262C99C85F003DCB28 /* amegaCapitalDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amegaCapitalDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFCD7452C99C862003DCB28 /* amegaCapitalQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amegaCapitalQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFCD7642C99C864003DCB28 /* amegaCapitalStage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amegaCapitalStage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE09DBBF2C8448C5007C2F93 /* BootSplash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = amegaCapital/BootSplash.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03DAB93C82E8E2D3D25C8684 /* Pods_amegaCapital.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFCD70E2C99C85F003DCB28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5ECFA4E1274134B6119CDB0 /* Pods_amegaCapital_amegaCapitalDev.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFCD72D2C99C862003DCB28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B384D0CC3AE82350E16057DD /* Pods_amegaCapital_amegaCapitalQA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFCD74C2C99C864003DCB28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC1D74AD87BA01972E3CD99 /* Pods_amegaCapital_amegaCapitalStage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13B07FAE1A68108700A75B9A /* amegaCapital */ = {
+			isa = PBXGroup;
+			children = (
+				FA7007452E98BCC5004C031C /* amegaCapital-Bridging-Header.h */,
+				FA7007462E98BCC5004C031C /* amegaCapitalDev-Bridging-Header.h */,
+				FA7007472E98BCC5004C031C /* amegaCapitalQA-Bridging-Header.h */,
+				FA7007482E98BCC5004C031C /* amegaCapitalStage-Bridging-Header.h */,
+				FA7007492E98BCC5004C031C /* AppDelegate.swift */,
+				FA70074A2E98BCC5004C031C /* PrivacyInfo.xcprivacy */,
+				FAF7C02E2D304033002D8903 /* GoogleService-Info.plist */,
+				FAF7C02C2D30401E002D8903 /* GoogleService-Info.plist */,
+				FAF7C02A2D304009002D8903 /* GoogleService-Info.plist */,
+				FAF7C0282D3038BF002D8903 /* GoogleService-Info.plist */,
+				FE09DBBF2C8448C5007C2F93 /* BootSplash.storyboard */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+			);
+			name = amegaCapital;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA70072B2E984D59004C031C /* libswiftWebKit.tbd */,
+				FA9842BB2E3CC648003BF561 /* AppsFlyerLib.xcframework */,
+				FA048A6B2D59EF9700B9A4F2 /* StoreKit.framework */,
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				044C0A01488E5DF2ED9FCA22 /* Pods_amegaCapital.framework */,
+				7D20C765961E0BA2C893264E /* Pods_amegaCapital_amegaCapitalDev.framework */,
+				13883120879E4149A90C4976 /* Pods_amegaCapital_amegaCapitalQA.framework */,
+				6C4143A8376FDE7BCD5F2B0F /* Pods_amegaCapital_amegaCapitalStage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				FA2300772C35334F00061FAF /* branch.json */,
+				FAD979352BCE45FA006503A8 /* assets */,
+				13B07FAE1A68108700A75B9A /* amegaCapital */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				E45195CCC7E2494DBD3A4469 /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* amegaCapital.app */,
+				FAFCD7262C99C85F003DCB28 /* amegaCapitalDev.app */,
+				FAFCD7452C99C862003DCB28 /* amegaCapitalQA.app */,
+				FAFCD7642C99C864003DCB28 /* amegaCapitalStage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E945F0DA4B06571476C8EF9 /* Pods-amegaCapital.debug.xcconfig */,
+				A501BDB23A72250C6AC6F657 /* Pods-amegaCapital.release.xcconfig */,
+				ADB03386B439416CBEAE63CB /* Pods-amegaCapital-amegaCapitalDev.debug.xcconfig */,
+				E4C9478FBEAC48BB52375FE2 /* Pods-amegaCapital-amegaCapitalDev.release.xcconfig */,
+				45A253DCA5EDE2E4522B230F /* Pods-amegaCapital-amegaCapitalQA.debug.xcconfig */,
+				F402A1484AC6605BDF594D12 /* Pods-amegaCapital-amegaCapitalQA.release.xcconfig */,
+				2A00D7DFA76A999D1E1FEE31 /* Pods-amegaCapital-amegaCapitalStage.debug.xcconfig */,
+				B68495D2482C23B6DB3E72BA /* Pods-amegaCapital-amegaCapitalStage.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E45195CCC7E2494DBD3A4469 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				345C47E21B3D4ED2A2C58F22 /* Inter-Regular.ttf */,
+				2268E889AE0E44DB9E7B2A9E /* GeneralSans-Medium.ttf */,
+				009112F8D73A4EB3B1966A6F /* GeneralSans-Semibold.ttf */,
+				A4F27ECDD10248E7A571266B /* Inter-Medium.ttf */,
+				152879600DB84CF0BBBB8139 /* Unbounded-Medium.ttf */,
+				87AA11A1FAF5416F81D64EAA /* GeneralSans-Regular.ttf */,
+				9CADD539E70B4831B3A796D3 /* SpaceGrotesk-Bold.ttf */,
+				D56C189AA2E945F9805FD525 /* SpaceGrotesk-Light.ttf */,
+				9880C9CB54254745971F9A19 /* SpaceGrotesk-Medium.ttf */,
+				5894143D42444BF8BA2A9FC0 /* SpaceGrotesk-Regular.ttf */,
+				D8E7DECCAD864ABF849F31C6 /* SpaceGrotesk-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13B07F861A680F5B00A75B9A /* amegaCapital */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "amegaCapital" */;
+			buildPhases = (
+				4F97BF1A80F2AE9A8A0244D5 /* [CP] Check Pods Manifest.lock */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				001BA3686E644E928A187BB0 /* Upload Debug Symbols to Sentry */,
+				145628AD52C9DE090D17186D /* [CP] Embed Pods Frameworks */,
+				24D32F24977EBFC1E7A53248 /* [CP] Copy Pods Resources */,
+				2612AA7BB049CCDCA13C5663 /* [CP-User] [RNFB] Core Configuration */,
+				B0E8C01E9CDA84D836378CF4 /* [CP-User] [RNFB] Crashlytics Configuration */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = amegaCapital;
+			productName = amegaCapital;
+			productReference = 13B07F961A680F5B00A75B9A /* amegaCapital.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAFCD7092C99C85F003DCB28 /* amegaCapitalDev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFCD7232C99C85F003DCB28 /* Build configuration list for PBXNativeTarget "amegaCapitalDev" */;
+			buildPhases = (
+				3977126BD7EEEC6E5AF4447A /* [CP] Check Pods Manifest.lock */,
+				FAFCD70B2C99C85F003DCB28 /* Sources */,
+				FAFCD70E2C99C85F003DCB28 /* Frameworks */,
+				FAFCD7112C99C85F003DCB28 /* Resources */,
+				FAFCD71E2C99C85F003DCB28 /* Bundle React Native code and images */,
+				88DD8F38485228045808748F /* [CP] Embed Pods Frameworks */,
+				047AA6259D96D2F6030C41D2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = amegaCapitalDev;
+			productName = amegaCapital;
+			productReference = FAFCD7262C99C85F003DCB28 /* amegaCapitalDev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAFCD7282C99C862003DCB28 /* amegaCapitalQA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFCD7422C99C862003DCB28 /* Build configuration list for PBXNativeTarget "amegaCapitalQA" */;
+			buildPhases = (
+				1761ABFFC695B784350B0A80 /* [CP] Check Pods Manifest.lock */,
+				FAFCD72A2C99C862003DCB28 /* Sources */,
+				FAFCD72D2C99C862003DCB28 /* Frameworks */,
+				FAFCD7302C99C862003DCB28 /* Resources */,
+				FAFCD73D2C99C862003DCB28 /* Bundle React Native code and images */,
+				808E0DFBB69E088CE03BD547 /* [CP] Embed Pods Frameworks */,
+				1B49EBD9A84493E967961BD8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = amegaCapitalQA;
+			productName = amegaCapital;
+			productReference = FAFCD7452C99C862003DCB28 /* amegaCapitalQA.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAFCD7472C99C864003DCB28 /* amegaCapitalStage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFCD7612C99C864003DCB28 /* Build configuration list for PBXNativeTarget "amegaCapitalStage" */;
+			buildPhases = (
+				0EF05C885336E0C13747C192 /* [CP] Check Pods Manifest.lock */,
+				FAFCD7492C99C864003DCB28 /* Sources */,
+				FAFCD74C2C99C864003DCB28 /* Frameworks */,
+				FAFCD74F2C99C864003DCB28 /* Resources */,
+				FAFCD75C2C99C864003DCB28 /* Bundle React Native code and images */,
+				9966AF4BF1C587FFCAFDE708 /* [CP] Embed Pods Frameworks */,
+				4DADD03BB37F7DF6AD29A9AD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = amegaCapitalStage;
+			productName = amegaCapital;
+			productReference = FAFCD7642C99C864003DCB28 /* amegaCapitalStage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1620;
+					};
+					FAFCD7092C99C85F003DCB28 = {
+						LastSwiftMigration = 1620;
+					};
+					FAFCD7282C99C862003DCB28 = {
+						LastSwiftMigration = 1620;
+					};
+					FAFCD7472C99C864003DCB28 = {
+						LastSwiftMigration = 1620;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "amegaCapital" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* amegaCapital */,
+				FAFCD7092C99C85F003DCB28 /* amegaCapitalDev */,
+				FAFCD7282C99C862003DCB28 /* amegaCapitalQA */,
+				FAFCD7472C99C864003DCB28 /* amegaCapitalStage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				EF09382716824C9C9A189F86 /* Inter-Regular.ttf in Resources */,
+				FA2300782C35334F00061FAF /* branch.json in Resources */,
+				FAD979362BCE45FA006503A8 /* assets in Resources */,
+				FAF7C02B2D304009002D8903 /* GoogleService-Info.plist in Resources */,
+				9E7094A24A8845BB85ADB3AC /* GeneralSans-Medium.ttf in Resources */,
+				BAD7D04AAC66453B8FC726A5 /* GeneralSans-Semibold.ttf in Resources */,
+				FE09DBC02C8448C5007C2F93 /* BootSplash.storyboard in Resources */,
+				D8E1D8F7069847DAA716E857 /* Inter-Medium.ttf in Resources */,
+				A70C6CF292614C488AF99732 /* Unbounded-Medium.ttf in Resources */,
+				F5E81EC3010744E0BDD0533F /* GeneralSans-Regular.ttf in Resources */,
+				FA70074F2E98BCC5004C031C /* PrivacyInfo.xcprivacy in Resources */,
+				55106D763CF3431D8B34C014 /* SpaceGrotesk-Bold.ttf in Resources */,
+				F99F50CD1FEA4B40BF54F25D /* SpaceGrotesk-Light.ttf in Resources */,
+				0A6491B096754D7CB245D050 /* SpaceGrotesk-Medium.ttf in Resources */,
+				3F5F53B2BA394FB6A8D3AAC3 /* SpaceGrotesk-Regular.ttf in Resources */,
+				0DD0782F9C324F60AB7B1737 /* SpaceGrotesk-SemiBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFCD7112C99C85F003DCB28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFCD7122C99C85F003DCB28 /* LaunchScreen.storyboard in Resources */,
+				FAFCD7132C99C85F003DCB28 /* Images.xcassets in Resources */,
+				FAFCD7152C99C85F003DCB28 /* Inter-Regular.ttf in Resources */,
+				FA70074C2E98BCC5004C031C /* PrivacyInfo.xcprivacy in Resources */,
+				FAFCD7162C99C85F003DCB28 /* branch.json in Resources */,
+				FAFCD7172C99C85F003DCB28 /* assets in Resources */,
+				FAF7C0292D3038BF002D8903 /* GoogleService-Info.plist in Resources */,
+				FAFCD7182C99C85F003DCB28 /* GeneralSans-Medium.ttf in Resources */,
+				FAFCD7192C99C85F003DCB28 /* GeneralSans-Semibold.ttf in Resources */,
+				FAFCD71A2C99C85F003DCB28 /* BootSplash.storyboard in Resources */,
+				FAFCD71B2C99C85F003DCB28 /* Inter-Medium.ttf in Resources */,
+				FAFCD71C2C99C85F003DCB28 /* Unbounded-Medium.ttf in Resources */,
+				FAFCD71D2C99C85F003DCB28 /* GeneralSans-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFCD7302C99C862003DCB28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFCD7312C99C862003DCB28 /* LaunchScreen.storyboard in Resources */,
+				FAFCD7322C99C862003DCB28 /* Images.xcassets in Resources */,
+				FAFCD7342C99C862003DCB28 /* Inter-Regular.ttf in Resources */,
+				FA7007522E98BCC5004C031C /* PrivacyInfo.xcprivacy in Resources */,
+				FAFCD7352C99C862003DCB28 /* branch.json in Resources */,
+				FAFCD7362C99C862003DCB28 /* assets in Resources */,
+				FAF7C02D2D30401E002D8903 /* GoogleService-Info.plist in Resources */,
+				FAFCD7372C99C862003DCB28 /* GeneralSans-Medium.ttf in Resources */,
+				FAFCD7382C99C862003DCB28 /* GeneralSans-Semibold.ttf in Resources */,
+				FAFCD7392C99C862003DCB28 /* BootSplash.storyboard in Resources */,
+				FAFCD73A2C99C862003DCB28 /* Inter-Medium.ttf in Resources */,
+				FAFCD73B2C99C862003DCB28 /* Unbounded-Medium.ttf in Resources */,
+				FAFCD73C2C99C862003DCB28 /* GeneralSans-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFCD74F2C99C864003DCB28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFCD7502C99C864003DCB28 /* LaunchScreen.storyboard in Resources */,
+				FAFCD7512C99C864003DCB28 /* Images.xcassets in Resources */,
+				FAFCD7532C99C864003DCB28 /* Inter-Regular.ttf in Resources */,
+				FA70074D2E98BCC5004C031C /* PrivacyInfo.xcprivacy in Resources */,
+				FAFCD7542C99C864003DCB28 /* branch.json in Resources */,
+				FAFCD7552C99C864003DCB28 /* assets in Resources */,
+				FAF7C02F2D304033002D8903 /* GoogleService-Info.plist in Resources */,
+				FAFCD7562C99C864003DCB28 /* GeneralSans-Medium.ttf in Resources */,
+				FAFCD7572C99C864003DCB28 /* GeneralSans-Semibold.ttf in Resources */,
+				FAFCD7582C99C864003DCB28 /* BootSplash.storyboard in Resources */,
+				FAFCD7592C99C864003DCB28 /* Inter-Medium.ttf in Resources */,
+				FAFCD75A2C99C864003DCB28 /* Unbounded-Medium.ttf in Resources */,
+				FAFCD75B2C99C864003DCB28 /* GeneralSans-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		001BA3686E644E928A187BB0 /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Upload Debug Symbols to Sentry";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh ../node_modules/@sentry/react-native/scripts/sentry-xcode-debug-files.sh\n";
+		};
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT \\\"/bin/sh ../node_modules/@sentry/react-native/scripts/sentry-xcode.sh $REACT_NATIVE_XCODE\\\"\"\n";
+		};
+		047AA6259D96D2F6030C41D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalDev/Pods-amegaCapital-amegaCapitalDev-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalDev/Pods-amegaCapital-amegaCapitalDev-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalDev/Pods-amegaCapital-amegaCapitalDev-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0EF05C885336E0C13747C192 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-amegaCapital-amegaCapitalStage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		145628AD52C9DE090D17186D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital/Pods-amegaCapital-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital/Pods-amegaCapital-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-amegaCapital/Pods-amegaCapital-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1761ABFFC695B784350B0A80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-amegaCapital-amegaCapitalQA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B49EBD9A84493E967961BD8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalQA/Pods-amegaCapital-amegaCapitalQA-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalQA/Pods-amegaCapital-amegaCapitalQA-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalQA/Pods-amegaCapital-amegaCapitalQA-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24D32F24977EBFC1E7A53248 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital/Pods-amegaCapital-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital/Pods-amegaCapital-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-amegaCapital/Pods-amegaCapital-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2612AA7BB049CCDCA13C5663 /* [CP-User] [RNFB] Core Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Core Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\n\n##########################################################################\n##########################################################################\n#\n#  NOTE THAT IF YOU CHANGE THIS FILE YOU MUST RUN pod install AFTERWARDS\n#\n#  This file is installed as an Xcode build script in the project file\n#  by cocoapods, and you will not see your changes until you pod install\n#\n##########################################################################\n##########################################################################\n\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | /usr/bin/head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    if ! python3 --version >/dev/null 2>&1; then echo \"python3 not found, firebase.json file processing error.\" && exit 1; fi\n    _JSON_OUTPUT_BASE64=$(python3 -c 'import json,sys,base64;print(base64.b64encode(bytes(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"', '\"'rb'\"').read())['${_JSON_ROOT}']), '\"'utf-8'\"')).decode())' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.app_data_collection_default_enabled\n  _APP_DATA_COLLECTION_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_data_collection_default_enabled\")\n  if [[ $_APP_DATA_COLLECTION_ENABLED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseDataCollectionDefaultEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_DATA_COLLECTION_ENABLED\")\")\n  fi\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.analytics_collection_deactivated\n  _ANALYTICS_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_collection_deactivated\")\n  if [[ $_ANALYTICS_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_DEACTIVATED\")\")\n  fi\n\n  # config.analytics_idfv_collection_enabled\n  _ANALYTICS_IDFV_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_idfv_collection_enabled\")\n  if [[ $_ANALYTICS_IDFV_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_IDFV_COLLECTION\")\")\n  fi\n\n  # config.analytics_default_allow_analytics_storage\n  _ANALYTICS_STORAGE=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_analytics_storage\")\n  if [[ $_ANALYTICS_STORAGE ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_STORAGE\")\")\n  fi\n\n  # config.analytics_default_allow_ad_storage\n  _ANALYTICS_AD_STORAGE=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_storage\")\n  if [[ $_ANALYTICS_AD_STORAGE ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AD_STORAGE\")\")\n  fi\n\n  # config.analytics_default_allow_ad_user_data\n  _ANALYTICS_AD_USER_DATA=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_user_data\")\n  if [[ $_ANALYTICS_AD_USER_DATA ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AD_USER_DATA\")\")\n  fi\n\n  # config.analytics_default_allow_ad_personalization_signals\n  _ANALYTICS_PERSONALIZATION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_personalization_signals\")\n  if [[ $_ANALYTICS_PERSONALIZATION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_PERSONALIZATION\")\")\n  fi\n\n  # config.analytics_registration_with_ad_network_enabled\n  _ANALYTICS_REGISTRATION_WITH_AD_NETWORK=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_registration_with_ad_network_enabled\")\n  if [[ $_ANALYTICS_REGISTRATION_WITH_AD_NETWORK ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_REGISTRATION_WITH_AD_NETWORK\")\")\n  fi\n\n  # config.google_analytics_automatic_screen_reporting_enabled\n  _ANALYTICS_AUTO_SCREEN_REPORTING=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_automatic_screen_reporting_enabled\")\n  if [[ $_ANALYTICS_AUTO_SCREEN_REPORTING ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAutomaticScreenReportingEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_SCREEN_REPORTING\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_collection_deactivated\n  _PERF_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_collection_deactivated\")\n  if [[ $_PERF_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_deactivated\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_DEACTIVATED\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.in_app_messaging_auto_colllection_enabled\n  _FIAM_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"in_app_messaging_auto_collection_enabled\")\n  if [[ $_FIAM_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseInAppMessagingAutomaticDataCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_FIAM_AUTO_INIT\")\")\n  fi\n\n  # config.app_check_token_auto_refresh\n  _APP_CHECK_TOKEN_AUTO_REFRESH=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_check_token_auto_refresh\")\n  if [[ $_APP_CHECK_TOKEN_AUTO_REFRESH ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAppCheckTokenAutoRefreshEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_CHECK_TOKEN_AUTO_REFRESH\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
+		};
+		3977126BD7EEEC6E5AF4447A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-amegaCapital-amegaCapitalDev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DADD03BB37F7DF6AD29A9AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalStage/Pods-amegaCapital-amegaCapitalStage-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalStage/Pods-amegaCapital-amegaCapitalStage-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalStage/Pods-amegaCapital-amegaCapitalStage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F97BF1A80F2AE9A8A0244D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-amegaCapital-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		808E0DFBB69E088CE03BD547 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalQA/Pods-amegaCapital-amegaCapitalQA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalQA/Pods-amegaCapital-amegaCapitalQA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalQA/Pods-amegaCapital-amegaCapitalQA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88DD8F38485228045808748F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalDev/Pods-amegaCapital-amegaCapitalDev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalDev/Pods-amegaCapital-amegaCapitalDev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalDev/Pods-amegaCapital-amegaCapitalDev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9966AF4BF1C587FFCAFDE708 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalStage/Pods-amegaCapital-amegaCapitalStage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalStage/Pods-amegaCapital-amegaCapitalStage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-amegaCapital-amegaCapitalStage/Pods-amegaCapital-amegaCapitalStage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0E8C01E9CDA84D836378CF4 /* [CP-User] [RNFB] Crashlytics Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Crashlytics Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\nif [[ ${PODS_ROOT} ]]; then\n  echo \"info: Exec FirebaseCrashlytics Run from Pods\"\n  \"${PODS_ROOT}/FirebaseCrashlytics/run\"\nelse\n  echo \"info: Exec FirebaseCrashlytics Run from framework\"\n  \"${PROJECT_DIR}/FirebaseCrashlytics.framework/run\"\nfi\n";
+		};
+		FAFCD71E2C99C85F003DCB28 /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		FAFCD73D2C99C862003DCB28 /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		FAFCD75C2C99C864003DCB28 /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA7007502E98BCC5004C031C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFCD70B2C99C85F003DCB28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA70074B2E98BCC5004C031C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFCD72A2C99C862003DCB28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA7007512E98BCC5004C031C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFCD7492C99C864003DCB28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA70074E2E98BCC5004C031C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E945F0DA4B06571476C8EF9 /* Pods-amegaCapital.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = amegaCapital/prod/amegaCapital.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZB5Y8DL237;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = amegaCapital/prod/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Amega Capital";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				MARKETING_VERSION = 1.2.4;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amega.capital.app;
+				PRODUCT_NAME = amegaCapital;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = com.amega.capital.app;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital/amegaCapital-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A501BDB23A72250C6AC6F657 /* Pods-amegaCapital.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = amegaCapital/prod/amegaCapital.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZB5Y8DL237;
+				INFOPLIST_FILE = amegaCapital/prod/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Amega Capital";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				MARKETING_VERSION = 1.2.4;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amega.capital.app;
+				PRODUCT_NAME = amegaCapital;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = com.amega.capital.app;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital/amegaCapital-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital-Bridging-Header.h";
+				USE_HERMES = true;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-Fabric/React_Fabric.framework/Headers/react/renderer/components/view/platform/cxx",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+					"-DFOLLY_CFG_NO_COROUTINES=1",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital-Bridging-Header.h";
+				USE_HERMES = true;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAFCD7242C99C85F003DCB28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB03386B439416CBEAE63CB /* Pods-amegaCapital-amegaCapitalDev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDev;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = amegaCapital/dev/amegaCapital.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZB5Y8DL237;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = amegaCapital/dev/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Amega Capital Dev";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amega.capital.development;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital/amegaCapitalDev-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		FAFCD7252C99C85F003DCB28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4C9478FBEAC48BB52375FE2 /* Pods-amegaCapital-amegaCapitalDev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDev;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = amegaCapital/dev/amegaCapital.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZB5Y8DL237;
+				INFOPLIST_FILE = amegaCapital/dev/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Amega Capital Dev";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amega.capital.development;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital/amegaCapitalDev-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		FAFCD7432C99C862003DCB28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45A253DCA5EDE2E4522B230F /* Pods-amegaCapital-amegaCapitalQA.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconQA;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = amegaCapital/qa/amegaCapital.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 21;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZB5Y8DL237;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = amegaCapital/qa/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Amega Capital QA";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amega.capital.qa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = com.amega.capital.qa;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital/amegaCapitalQA-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		FAFCD7442C99C862003DCB28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F402A1484AC6605BDF594D12 /* Pods-amegaCapital-amegaCapitalQA.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconQA;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = amegaCapital/qa/amegaCapital.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 21;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZB5Y8DL237;
+				INFOPLIST_FILE = amegaCapital/qa/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Amega Capital QA";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amega.capital.qa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = com.amega.capital.qa;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital/amegaCapitalQA-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		FAFCD7622C99C864003DCB28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A00D7DFA76A999D1E1FEE31 /* Pods-amegaCapital-amegaCapitalStage.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = amegaCapital/stage/amegaCapital.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZB5Y8DL237;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = amegaCapital/stage/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Amega Capital Staging";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2.4;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amega.capital.staging;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = com.amega.capital.staging;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital/amegaCapitalStage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		FAFCD7632C99C864003DCB28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B68495D2482C23B6DB3E72BA /* Pods-amegaCapital-amegaCapitalStage.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconStage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = amegaCapital/stage/amegaCapital.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZB5Y8DL237;
+				INFOPLIST_FILE = amegaCapital/stage/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Amega Capital Staging";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2.4;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amega.capital.staging;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = com.amega.capital.staging;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/amegaCapital/amegaCapitalStage-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "amegaCapital" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "amegaCapital" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAFCD7232C99C85F003DCB28 /* Build configuration list for PBXNativeTarget "amegaCapitalDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFCD7242C99C85F003DCB28 /* Debug */,
+				FAFCD7252C99C85F003DCB28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAFCD7422C99C862003DCB28 /* Build configuration list for PBXNativeTarget "amegaCapitalQA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFCD7432C99C862003DCB28 /* Debug */,
+				FAFCD7442C99C862003DCB28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAFCD7612C99C864003DCB28 /* Build configuration list for PBXNativeTarget "amegaCapitalStage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFCD7622C99C864003DCB28 /* Debug */,
+				FAFCD7632C99C864003DCB28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}

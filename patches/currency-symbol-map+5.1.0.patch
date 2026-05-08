@@ -1,0 +1,13 @@
+diff --git a/node_modules/currency-symbol-map/map.js b/node_modules/currency-symbol-map/map.js
+index faff8f0..fd3b94c 100644
+--- a/node_modules/currency-symbol-map/map.js
++++ b/node_modules/currency-symbol-map/map.js
+@@ -30,7 +30,7 @@ module.exports = {
+   CAD: '$',
+   CDF: 'FC',
+   CHE: 'CHE',
+-  CHF: 'CHF',
++  CHF: '₣',
+   CHW: 'CHW',
+   CLF: 'CLF',
+   CLP: '$',
